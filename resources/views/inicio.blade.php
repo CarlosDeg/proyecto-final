@@ -10,8 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -42,18 +41,17 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto"><a href="index.html">Varmond<br> School</a></h1>
+      <h1   class="logo mr-auto"><a >Varmond<br> School</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.html">Inicio</a></li>
-          <li><a href="about.html">Informacion</a></li>
-          <li><a href="courses.html">Cursos</a></li>
-          <li><a href="events.html">Eventos</a></li>
-          <li><a href="pricing.html">Colegituras</a></li>         
-          <li><a href="contact.html">Contacto</a></li>
+          <li class="active"><a href="#0">Inicio</a></li>
+          <li><a href="#1">Informacion</a></li>
+          <li><a href="#2">Cursos</a></li>
+          <li><a href="#3">Profesores</a></li>         
+          <li><a href="#4">Contacto</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
@@ -66,7 +64,7 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex justify-content-center align-items-center">
     <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
-      <h1>Aprender hoy,<br>Educación para el mañana</h1>
+      <h1 id="0">Aprender hoy,<br>Educación para el mañana</h1>
       <h2>Creando grandes historias, transformando futuros</h2>
       <a href="courses.html" class="btn-get-started">Iniciar</a>
     </div>
@@ -79,8 +77,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>About</h2>
-          <p>About Us</p>
+          <h2>Informacion</h2>
+          <p id="1">conoce mas </p>
         </div>
 
         <div class="row">
@@ -88,21 +86,11 @@
             <img src="assets/img/about.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <h3>Excelente opción para alcanzar metas y contribuir al desarrollo de todos los vinculados a nuestra comunidad.</h3><br><br>
             <p class="font-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+              Es una institución pública de educación superior comprometida con el desarrollo del municipio que la aloja, del Estado que la respalda y del país que la sustenta. Busca formar seres humanos íntegros, que mediante las competencias adquiridas sean partícipes de la sociedad del conocimiento.
             </p>
-            <ul>
-              <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="icofont-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-            </ul>
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            </p>
-            <a href="about.html" class="learn-more-btn">Learn More</a>
-          </div>
+           
         </div>
 
       </div>
@@ -115,23 +103,18 @@
         <div class="row counters">
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">1232</span>
-            <p>Students</p>
+            <span data-toggle="counter-up">250</span>
+            <p>Estudiantes</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">64</span>
-            <p>Courses</p>
+            <span data-toggle="counter-up">8</span>
+            <p>Cursos</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">42</span>
-            <p>Events</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">15</span>
-            <p>Trainers</p>
+            <span data-toggle="counter-up">5</span>
+            <p>Eventos</p>
           </div>
 
         </div>
@@ -140,44 +123,43 @@
     </section><!-- End Counts Section -->
 
     <!-- ======= Why Us Section ======= -->
-    <section id="why-us" class="why-us">
-      <div class="container" data-aos="fade-up">
+    <section id="why-us" class="why-us justify-content-center">
+      <div class="container justify-content-center" data-aos="fade-up">
 
-        <div class="row">
-          <div class="col-lg-4 d-flex align-items-stretch">
-            <div class="content">
-              <h3>Why Choose Mentor?</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
-              </p>
-              <div class="text-center">
-                <a href="about.html" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-8 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-boxes d-flex flex-column justify-content-center">
-              <div class="row">
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
+        <div class="row justify-content-center">
+          
+          <div class=" justify-content-center" data-aos="zoom-in" >
+            <div class="icon-boxes d-flex  justify-content-center">
+              <div class="row text-center" >
+                <div class="col-md-4 d-flex">
+                  <div class="icon-box mt-5 mt-xl-0">
                     <i class="bx bx-receipt"></i>
-                    <h4>Corporis voluptates sit</h4>
-                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-                  </div>
+                    <h4>MISIÓN</h4>
+                    <p align="justify">
+Formamos integralmente, a través de un modelo educativo basado en competencias y dentro de un esquema de pensamiento complejo, profesionales líderes, éticos, altamente capacitados en sus campos de especialidad y con cultura de inclusión, emprendimiento, innovación y responsabilidad social.</p>
+                  </div>&nbsp; &nbsp; &nbsp; <br><br>
                 </div>
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
+                <div class="col-md-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-5 mt-xl-0">
                     <i class="bx bx-cube-alt"></i>
-                    <h4>Ullamco laboris ladore pan</h4>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-                  </div>
+                    <h4>VISIÓN</h4>
+                    <p align="justify">
+Ser una institución educativa reconocida nacional e internacionalmente en el mediano plazo por la excelencia en sus estrategias de desarrollo integral de profesionales que, formados por docentes con alta capacidad académica, sean capaces de comprender y brindar soluciones que respondan a los retos sociales, culturales, económicos, ecológicos y políticos del país asegurando como consecuencia, una sólida vinculación estratégica de la institución con el entorno global.</p>
+                  </div>&nbsp; &nbsp; &nbsp; <br><br>
                 </div>
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
+                <div class="col-md-4 d-flex txt-center">
+                  <div class="icon-box mt-5 mt-xl-0 justify-content-center">
                     <i class="bx bx-images"></i>
-                    <h4>Labore consequatur</h4>
-                    <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                    <h4>VALORES</h4>
+                    <p align="left">RESPONSABILIDAD
+EQUIDAD<br>
+HONESTIDAD<br>
+LEALTAD<br>
+TRANSPARENCIA<br>
+RESPETO HACIA EL SER HUMANO<br>
+RESPETO A LA LIBERTAD DE PENSAMIENTO<br>
+RESPETO A LA DIVERSIDAD<br>
+RESPETO HACIA EL MEDIO AMBIENTE</p>
                   </div>
                 </div>
               </div>
@@ -188,110 +170,26 @@
       </div>
     </section><!-- End Why Us Section -->
 
-    <!-- ======= Features Section ======= -->
-    <section id="features" class="features">
-      <div class="container" data-aos="fade-up">
-
-        <div class="row" data-aos="zoom-in" data-aos-delay="100">
-          <div class="col-lg-3 col-md-4">
-            <div class="icon-box">
-              <i class="ri-store-line" style="color: #ffbb2c;"></i>
-              <h3><a href="">Lorem Ipsum</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-            <div class="icon-box">
-              <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
-              <h3><a href="">Dolor Sitema</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-            <div class="icon-box">
-              <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
-              <h3><a href="">Sed perspiciatis</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
-            <div class="icon-box">
-              <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
-              <h3><a href="">Magni Dolores</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="ri-database-2-line" style="color: #47aeff;"></i>
-              <h3><a href="">Nemo Enim</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
-              <h3><a href="">Eiusmod Tempor</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
-              <h3><a href="">Midela Teren</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
-              <h3><a href="">Pira Neve</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="ri-anchor-line" style="color: #b2904f;"></i>
-              <h3><a href="">Dirada Pack</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="ri-disc-line" style="color: #b20969;"></i>
-              <h3><a href="">Moton Ideal</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="ri-base-station-line" style="color: #ff5828;"></i>
-              <h3><a href="">Verdo Park</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="ri-fingerprint-line" style="color: #29cc61;"></i>
-              <h3><a href="">Flavor Nivelanda</a></h3>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Features Section -->
+    
 
     <!-- ======= Popular Courses Section ======= -->
     <section id="popular-courses" class="courses">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Courses</h2>
-          <p>Popular Courses</p>
+          <h2>Principales</h2>
+          <p id="2">Cursos</p>
         </div>
 
         <div class="row" data-aos="zoom-in" data-aos-delay="100">
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="course-item">
-              <img src="assets/img/course-1.jpg" class="img-fluid" alt="...">
+              <img src="assets/img/course-3.jpg" class="img-fluid" alt="...">
               <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Web Development</h4>
-                  <p class="price">$169</p>
-                </div>
-
-                <h3><a href="course-details.html">Website Design</a></h3>
-                <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
+                
+                <h3><a>SOFTWARE</a></h3>
+                <p>Hazte un experto en el mundo del desarrollo de software y adquiere conocimientos de gran demanda laboral como un lenguaje de programación, Microsoft Access, la estructuración del algoritmo de una Base de Datos Relacional (BDR), y nociones básicas de SQL, por nombrar algunas. </p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
                     <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
@@ -311,13 +209,10 @@
             <div class="course-item">
               <img src="assets/img/course-2.jpg" class="img-fluid" alt="...">
               <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Marketing</h4>
-                  <p class="price">$250</p>
-                </div>
+                
 
-                <h3><a href="course-details.html">Search Engine Optimization</a></h3>
-                <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
+                <h3><a>ECONIMIA</a></h3>
+                <p>Le permitirá conocer sobre los fundamentos ideológicos y conceptuales de esta ciencia, bajo la cual se sotiene la sociedad y los modelos productivos, por tanto, se estará indagando sobre el manejo comercial, financiero y empresarial, determinando su funcionamiento e incidencia a nivel micro y macro económico.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
                     <img src="assets/img/trainers/trainer-2.jpg" class="img-fluid" alt="">
@@ -335,15 +230,14 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
             <div class="course-item">
-              <img src="assets/img/course-3.jpg" class="img-fluid" alt="...">
+              <img src="assets/img/abogados.jpg" class="img-fluid" alt="...">
               <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Content</h4>
-                  <p class="price">$180</p>
-                </div>
+               
 
-                <h3><a href="course-details.html">Copywriting</a></h3>
-                <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
+                <h3><a>ABOGADO</a></h3>
+                <p>El Derecho engloba al conjunto de leyes, reglamentaciones y resoluciones  de un país, mientras que la ley es una fuente del Derecho que tiene como objetivo orientar a la actividad humana hacia el bien común.<BR>
+En esta sección podrás estudiar otras materias relacionadas como la Criminología.
+</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
                     <img src="assets/img/trainers/trainer-3.jpg" class="img-fluid" alt="">
@@ -369,8 +263,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Trainers</h2>
-          <p>Our Professional Trainers</p>
+          <h2>..</h2>
+          <p id="3">Profesores</p>
         </div>
 
         <div class="row" data-aos="zoom-in" data-aos-delay="100">
@@ -378,10 +272,12 @@
             <div class="member">
               <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
               <div class="member-content">
-                <h4>Walter White</h4>
-                <span>Web Development</span>
+                <h4>Antonio </h4>
+                <span>Ingeniero software</span>
                 <p>
-                  Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+                 Desarrollador en los lenjuages de programacion de PHP, C++,C# y PYTHON
+                 Conoce acerca de tecnologías de comunicación y soluciones de programación móvil, áreas básicas para el desarrollo de aplicaciones para un smartphone o tablet.
+Realiza certificaciones internacionales que te darán la certeza de emplaearte en una empresa trsnanacional. 
                 </p>
                 <div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
@@ -397,10 +293,10 @@
             <div class="member">
               <img src="assets/img/trainers/trainer-2.jpg" class="img-fluid" alt="">
               <div class="member-content">
-                <h4>Sarah Jhinson</h4>
-                <span>Marketing</span>
+                <h4>Lana </h4>
+                <span>Economista</span>
                 <p>
-                  Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum temporibus
+                 Economía como su especialidad de pregrado. Además, los comités de admisión de las escuelas de posgrado consideran favorablemente el título de Economía en diversas disciplinas, como Finanzas, Ciencias Políticas, Historia, Antropología, Estadística, Políticas Públicas y Estudios Urbanos. 
                 </p>
                 <div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
@@ -416,10 +312,12 @@
             <div class="member">
               <img src="assets/img/trainers/trainer-3.jpg" class="img-fluid" alt="">
               <div class="member-content">
-                <h4>William Anderson</h4>
-                <span>Content</span>
+                <h4>Brandon</h4>
+                 <span>Abogado</span>
                 <p>
-                  Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
+                  Consultoría y/o litigio de diversos asuntos en materia civil, laboral, familiar, penal, administrativa, mercantil, fiscal y corporativa, entre otros.
+Reconoce las reformas constitucionales que te permitan litigar y buscar el bienestar y la justicia social en cualquier contexto.
+
                 </p>
                 <div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
@@ -446,17 +344,17 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Mentor</h3>
-            <p>
+            <h3>Varmond<br> School</h3>
+            <p id="4">
               A108 Adam Street <br>
-              New York, NY 535022<br>
+              Mexico, NY 535022<br>
               United States <br><br>
               <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              <strong>Email:</strong> VarmondSchool@example.com<br>
             </p>
           </div>
 
-          <div class="col-lg-2 col-md-6 footer-links">
+          <!--<div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
@@ -465,7 +363,7 @@
               <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
             </ul>
-          </div>
+          </div> -->
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
@@ -492,24 +390,13 @@
 
     <div class="container d-md-flex py-4">
 
-      <div class="mr-md-auto text-center text-md-left">
-        <div class="copyright">
-          &copy; Copyright <strong><span>Mentor</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/ -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
-      </div>
+
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="twitter" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="facebook" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="instagram" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="google-plus" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="linkedin" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
   </footer><!-- End Footer -->
