@@ -10,7 +10,7 @@
     <div class="sidebar "><!--MENU PARA MOSTRAR DIFERENTES MENUS DENTRO DEL ADMIN-->
         <ul class="sidebar-menu" >
             <li class="nav-item list-group">
-                <a href="usuarios" class="">
+                <a href="contenido" class="">
                     <i class="fa fa-home"></i>
                     <span>usuarios</span>
                 </a>

@@ -25,7 +25,6 @@ Route::get('admin', function () {
 
 
 
-
 //ruta para crear Administradores
 
 Route::get("/RegistroAdministrativo","AdministrativosC@index");
@@ -52,9 +51,13 @@ Route::get("/Semestre","SemestreC@index");
 Route::post("Semestre","SemestreC@store");
 
 //-->ruta para registrar Carreras//
+Route::get("/Carreras","CarrerasC@index");
+Route::post("Carreras","CarrerasC@store");
+Route::post("/crud/Carreras/{idC}/update","CarrerasC@update")->name('crud.Carreras.update');
+Route::get("/crud/Carreras/{idC}/delete","CarrerasC@delete")->name('crud.Carreras.delete');
 
 
-Route::resource('Carreras', 'CarrerasC');
+
 
 
 

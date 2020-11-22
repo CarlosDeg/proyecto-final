@@ -9,5 +9,9 @@ class CarrerasM extends Model
     protected  $table = 'carrera';
 
 
+    protected $fillable = [
+        'idCarrera', 'Carrera'
+    ];
+
 
 }

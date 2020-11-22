@@ -40,17 +40,15 @@ class CarrerasC extends Controller
     public function store(Request $request)
     {
 
-        $carreras = CarrerasM::create($request->input());
-        return response()->json($carreras);
-       /* $carreras = new CarrerasM();
+        $carreras = new CarrerasM();
 
         $carreras->Carrera = $request->input("Carrera");
 
 
         $carreras->save();
-        $materias = CarrerasM::all();
+        $carreras = CarrerasM::all();
 
-        return redirect()->back();*/
+        return redirect()->back();
     }
 
     /**
@@ -59,10 +57,9 @@ class CarrerasC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($idCarrera)
+    public function show()
     {
-        $carreras = CarrerasM::find($idCarrera);
-        return response()->json($carreras);
+
     }
 
     /**
@@ -86,12 +83,14 @@ class CarrerasC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update( $id)
+    public function update(Request $request,$idC)
     {
 
-        $carreras = CarrerasM::find($id);
+        $carreras = CarrerasM::find($idC);
+        $carreras ->Carrera = $request->Carrera;
+        $carreras->save();
 
-        return response()->json($carreras);
+        return redirect()->back();
 
     }
 
@@ -101,9 +100,12 @@ class CarrerasC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete(Request $request,$idC)
     {
-        $carreras = CarrerasM::find($id)->delete();
-        return response()->json(['success'=>'Post Deleted successfully']);
+        $carreras = CarrerasM::find($idC);
+
+        $carreras->delete();
+
+        return redirect()->back();
     }
 }
