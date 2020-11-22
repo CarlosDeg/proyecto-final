@@ -205,15 +205,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
         </div>
 
-        <div class="container-fluid">
-            <!--barra de busqueda-->
-            <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand">Carrera</a>
-                <form class="form-inline">
-                    <input name="search" class="form-control mr-sm-2" type="search" placeholder="Buscar  habitacion" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-                </form>
-            </nav>
+
             <!--TABLA -->
             <table class="table table-striped table-dark table-hover">
                 <thead>

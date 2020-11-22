@@ -52,8 +52,13 @@ Route::get("/Semestre","SemestreC@index");
 Route::post("Semestre","SemestreC@store");
 
 //-->ruta para registrar Carreras//
-Route::get("/Carreras","CarrerasC@index");
-Route::post("Carreras","CarrerasC@store");
+
+
+Route::resource('Carreras', 'CarrerasC');
+
+
+
+
 //-->ruta para registrar Grupos//
 Route::get("/Grupo","GrupoC@index");
 Route::post("Grupo","GrupoC@store");

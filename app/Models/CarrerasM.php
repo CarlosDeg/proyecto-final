@@ -9,4 +9,5 @@ class CarrerasM extends Model
     protected  $table = 'carrera';
 
 
+
 }

@@ -6,18 +6,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <script src="https://kit.fontawesome.com/ccbca44be9.js" crossorigin="anonymous"></script>
-    <title>AdminLTE  | Habitacion</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Laravel Ajax CRUD Example Tutorial with - CodingDriver</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.8/datatables.min.css"/>
 
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="adminlte/css/adminlte.min.css">
-    <!-- Google Font: Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
+</head>
 </head>
 <body class="hold-transition sidebar-mini">
 
@@ -42,17 +42,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </li>
     </ul>
 
-    <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
-        <div class="input-group input-group-sm">
-            <input class="form-control form-control-navbar" type="search" placeholder="Buscar" aria-label="Buscar">
-            <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-        </div>
-    </form>
+
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -149,89 +139,187 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </ul>
 </nav>
 <!-- fin del header --><br>
-<br>
 
+<!-- Modal -->
+<div class="content-wrapper">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Nuevos carreras</button>
+    <div    class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Carreras</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="Carreras" method="post" id="carreradata">
+                        @csrf
+                        <input type="hidden" id="idCarrera" name="idCarrera" value="">
 
-<div class="wrapper">
+                        <div class="form-group">
+                            <input name="Carrera" type="text" class="form-control" id="Carrera"  placeholder="Nombre de la carrera" required>
 
-    <div class="content-wrapper">
-        <div class="container-fluid">
-            <div class="col-md-14">
-                <!-- Input addon -->
-                <div class="card card-info">
-                    <div class="card-header bg-dark">
-                        <h3 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nuevos </font></font></h3>
-                    </div>
-                    <div class="card-body">
-
-                        <form action="Carreras" method="post" >
-                            @csrf
-                            <div class="form-row ">
-
-
-                                <div class="col-md-6 mb-3">
-                                    <input name="Carrera" type="text" class="form-control" id=""  placeholder="Carrera" required>
-
-                                </div>
-                            </div>
-
-
-
-
-                    <button class="btn btn-dark btn-sm" type="submit">Submit form</button>
-
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary btn-md" type="submit">Guardar</button>
+                        </div>
                     </form>
 
-
-
-
                 </div>
+
             </div>
         </div>
+    </div>
 
-        <!--barra de busqueda-->
-        <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand">Carrera</a>
-            <form class="form-inline">
-                <input name="search" class="form-control mr-sm-2" type="search" placeholder="Buscar  habitacion" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
-        </nav>
-        <!--TABLA -->
-        <table class="table table-striped table-dark table-hover">
-            <thead>
+    <!--TABLA -->
+    <div class="row">
+        <div class="col-12">
+    <table class="table table-striped table-bordered" id="laravel_crud">
+        <thead>
+        <tr>
+            <th scope="col">IdCarrera</th>
+            <th scope="col">Carrera</th>
+            <th scope="col">Acciones</th>
+        </tr>
+        </thead>
+        @foreach ( $carreras as  $carrera)
+            <tbody>
+
             <tr>
-                <th scope="col">IdCarrera</th>
-                <th scope="col">Carrera</th>
+                <td>{{ $carrera->idCarrera }}</td>
+                <td>{{$carrera->Carrera}}</td>
+                <td>
+                    <div class='btn-group'>
+                        <a href="#" id="editarCarrera" class=" btn btn-primary edit-btn " data-toggle="modal" data-target="#exampleModal" data-id="{{ $carrera->idCarrera }}">
+                            Editar    </a>
+                        <a href="#"  class="btn btn-danger">
+                            Eliminar </a></div></td>
 
-
-                <th scope="col">Acciones</th>
             </tr>
-            </thead>
-            @foreach ( $carreras as  $carrera)
-                <tbody>
+            </tbody>
+        @endforeach
+    </table>
 
-                <tr>
-                    <td>{{$carrera->idCarrera}}</td>
-                    <td>{{$carrera->Carrera}}</td>
+        </div>
+    </div>
+    <!-- EDITAR CARRERA-->
+    <div    class="modal fade" id="editarmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar Carreras</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="Carreras" method="post" id="editform">
+                        @csrf
+                        @method('put')
+                        <input type="hidden" id="idCarrera" name="idCarrera" value="">
 
+                        <div class="form-group">
+                            <input name="Carrera" type="text" class="form-control" id="Carrera"  placeholder="Nombre de la carrera" required>
 
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary btn-md" type="submit">Guardar</button>
+                        </div>
+                    </form>
 
-                    <td>
-                        <div class='btn-group'>
-                            <a href="admin.Carreras" class="btn btn-danger"><span class="glyphicon glyphicon- remove" aria-hidden="true"></span></a>
-                            <a href="#"  class="btn btn-warning"><span   class="glyphicon glyphicon-wrench"  aria-hidden="true"></span></a></div></td>
+                </div>
 
-                </tr>
-                </tbody>
-            @endforeach
-        </table>
-
-
+            </div>
+        </div>
     </div>
 </div>
-
-
+<!--fin del d-->
 </div>
+
+
 </body>
+<script>
+    $('#laravel_crud').DataTable();
+    function addPost() {
+        $("#idCarrera").val('');
+        $('#exampleModal').modal('show');
+    }
+
+    function editPost(event) {
+        var id  = $(event).data("id");
+        let _url = `/Carreras/${id}`;
+        $('#titleError').text('');
+        $('#descriptionError').text('');
+
+        $.ajax({
+            url: _url,
+            type: "GET",
+            success: function(response) {
+                if(response) {
+                    $("#post_id").val(response.id);
+                    $("#title").val(response.title);
+                    $("#description").val(response.description);
+                    $('#post-modal').modal('show');
+                }
+            }
+        });
+    }
+
+    function createPost() {
+        var title = $('#title').val();
+        var description = $('#description').val();
+        var id = $('#post_id').val();
+
+        let _url     = `/Carreras`;
+        let _token   = $('meta[name="csrf-token"]').attr('content');
+
+        $.ajax({
+            url: _url,
+            type: "POST",
+            data: {
+                id: id,
+                title: title,
+                description: description,
+                _token: _token
+            },
+            success: function(response) {
+                if(response.code == 200) {
+                    if(id != ""){
+                        $("#row_"+id+" td:nth-child(2)").html(response.data.title);
+                        $("#row_"+id+" td:nth-child(3)").html(response.data.description);
+                    } else {
+                        $('table tbody').prepend('<tr id="row_'+response.data.id+'"><td>'+response.data.id+'</td><td>'+response.data.title+'</td><td>'+response.data.description+'</td><td><a href="javascript:void(0)" data-id="'+response.data.id+'" onclick="editPost(event.target)" class="btn btn-info">Edit</a></td><td><a href="javascript:void(0)" data-id="'+response.data.id+'" class="btn btn-danger" onclick="deletePost(event.target)">Delete</a></td></tr>');
+                    }
+                    $('#title').val('');
+                    $('#description').val('');
+
+                    $('#post-modal').modal('hide');
+                }
+            },
+            error: function(response) {
+                $('#titleError').text(response.responseJSON.errors.title);
+                $('#descriptionError').text(response.responseJSON.errors.description);
+            }
+        });
+    }
+
+    function deletePost(event) {
+        var id  = $(event).data("idCarrera");
+        let _url = `/Carreras/${id}`;
+        let _token   = $('meta[name="csrf-token"]').attr('content');
+
+        $.ajax({
+            url: _url,
+            type: 'DELETE',
+            data: {
+                _token: _token
+            },
+            success: function(response) {
+                $("#row_"+id).remove();
+            }
+        });
+    }
+
+</script>
 </html>

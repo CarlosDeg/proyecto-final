@@ -17,7 +17,8 @@ class CarrerasC extends Controller
         $carreras = CarrerasM::all();
 
 
-        return view('admin.Carreras',compact('carreras'));
+
+        return view('admin.Carreras',compact('carreras'));;
     }
 
     /**
@@ -38,7 +39,10 @@ class CarrerasC extends Controller
      */
     public function store(Request $request)
     {
-        $carreras = new CarrerasM();
+
+        $carreras = CarrerasM::create($request->input());
+        return response()->json($carreras);
+       /* $carreras = new CarrerasM();
 
         $carreras->Carrera = $request->input("Carrera");
 
@@ -46,7 +50,7 @@ class CarrerasC extends Controller
         $carreras->save();
         $materias = CarrerasM::all();
 
-        return redirect()->back();
+        return redirect()->back();*/
     }
 
     /**
@@ -55,9 +59,10 @@ class CarrerasC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($idCarrera)
     {
-        //
+        $carreras = CarrerasM::find($idCarrera);
+        return response()->json($carreras);
     }
 
     /**
@@ -66,9 +71,12 @@ class CarrerasC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+
+
+
+
     }
 
     /**
@@ -78,9 +86,13 @@ class CarrerasC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update( $id)
     {
-        //
+
+        $carreras = CarrerasM::find($id);
+
+        return response()->json($carreras);
+
     }
 
     /**
@@ -91,6 +103,7 @@ class CarrerasC extends Controller
      */
     public function destroy($id)
     {
-        //
+        $carreras = CarrerasM::find($id)->delete();
+        return response()->json(['success'=>'Post Deleted successfully']);
     }
 }
