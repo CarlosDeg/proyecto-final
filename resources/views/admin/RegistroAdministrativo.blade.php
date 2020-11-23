@@ -146,7 +146,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content-wrapper">
         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-create-administrativos" >
             Nuevo
-        </button>
+        </button><br><br>
         <div    class="modal fade" id="modal-create-administrativos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -178,7 +178,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                             <div class="form-group">
 
-                                <input name="TelefonoAd" type="number" class="form-control" id="" placeholder="Telefono" required>
+                                <input name="TelefonoAd" type="tel" class="form-control" id="" placeholder="Telefono" required>
 
                             </div>
 
@@ -197,7 +197,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                         <div class="modal-footer">
-                            <button class="btn btn-primary btn-md" type="submit">Guardar</button>
+                            <button class="btn btn-lg btn-primary" type="submit">Guardar</button>
                         </div>
                     </form>
 

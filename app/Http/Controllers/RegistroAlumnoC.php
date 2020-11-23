@@ -85,9 +85,21 @@ class RegistroAlumnoC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $idMatricula)
     {
-        //
+        $Alumnos =Alumnos::where('idMatricula',$idMatricula)->first();
+        $Alumnos->NombreA = $request->NombreA;
+        $Alumnos->ApellidoPA = $request->ApellidoPA;
+        $Alumnos->ApellidoMA = $request->ApellidoMA;
+        $Alumnos->CorreoA = $request->CorreoA;
+        $Alumnos->DireccionA = $request->DireccionA;
+        $Alumnos->SexoA = $request->SexoA;
+        $Alumnos->TipoSangre = $request->TipoSangre;
+        $Alumnos->TelefonoT = $request->TelefonoT;
+        $Alumnos->Estatus = $request->Estatus;
+        $Alumnos->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -96,8 +108,16 @@ class RegistroAlumnoC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idMatricula)
     {
-        //
+        $Alumnos =Alumnos::where('idMatricula',$idMatricula)->first();
+
+        if ($Alumnos != null) {
+            $Alumnos->delete();
+
+            return redirect()->back();
+        }else
+        {
+            return redirect()->back();    }
     }
 }

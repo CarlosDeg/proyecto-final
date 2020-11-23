@@ -10,7 +10,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/ccbca44be9.js" crossorigin="anonymous"></script>
-    <title>AdminLTE  | Habitacion</title>
+    <title>Registro  | Alumnos </title>
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -151,79 +151,66 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- fin del header --><br>
 <br>
 
-
-<div class="wrapper">
+<!--*********************************SE CREA EL FORMULARIO  ********************************************-->
 
     <div class="content-wrapper">
-        <div class="container-fluid">
-            <div class="col-md-14">
-                <!-- Input addon -->
-                <div class="card card-info">
-                    <div class="card-header bg-dark">
-                        <h3 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nuevos Alumnos</font></font></h3>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-create-Alumnos" >
+            Nuevo Alumno
+        </button><br><br>
+        <div  class="modal fade" id="modal-create-Alumnos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Registro de Nuevos Alumnos</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     <div class="card-body">
 
                         <form action="RegistroAlumnos" method="post" >
                             @csrf
-                            <div class="form-row ">
-
-
-                                <div class="col-md-6 mb-3">
+                            <div class="modal-body">
+                                <div class="row">
+                                <div class="col-md-5">
                                     <input name="NombreA" type="text" class="form-control" id=""  placeholder="Nombre" required>
-
                                 </div>
-                                <div class="col-md-6 mb-3">
-
+                                    <div class="col-md-5">
                                     <input name="ApellidoPA" type="text" class="form-control" id="" placeholder="Apellido P" >
 
                                 </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-md-6 mb-3">
-
+                                    <div class="col-md-5">
                                     <input name="ApellidoMA" type="text" class="form-control" id="" placeholder="Apellido M" required>
 
                                 </div>
-
-                                <div class="col-md-6 mb-2">
-
+                                    <div class="col-md-5">
                                     <input name="CorreoA" type="text" class="form-control" id="" placeholder="Correo" required>
+                                </div>
+                                    <div class="col-md-5">
+                                    <input name="DireccionA" type="text" class="form-control" id="" placeholder="Direccion" required>
+                                </div>
+                                    <div class="col-md-5">
+                                    <input name="SexoA" type="text" class="form-control" id="" placeholder="Sexo" required>
+                                </div>
+                                    <div class="col-md-5">
+                                    <input name="TipoSangre" type="text" class="form-control" id="" placeholder="Grupo sanguineo" required>
+                                </div>
+                                <div class="col-md-5">
+                                    <input name="TelefonoT" type="tel" class="form-control" id="" placeholder="Tel" required>
+                                </div>
+                                <div class="col-md-5">
+                                    <input name="Estatus" type="text" class="form-control" id="" placeholder="Estatus" required>
+                                </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-lg btn-primary" type="submit">Guardar</button>
+                            </div>
 
                                 </div>
-                            </div>
 
-                            <div class="col-md-6 mb-2">
-
-                                <input name="DireccionA" type="text" class="form-control" id="" placeholder="Direccion" required>
 
                             </div>
-
-                            <div class="col-md-6 mb-2">
-
-                                <input name="SexoA" type="text" class="form-control" id="" placeholder="Sexo" required>
-
-                            </div>
-                            <div class="col-md-6 mb-2">
-
-                                <input name="TipoSangre" type="text" class="form-control" id="" placeholder="Grupo sanguineo" required>
-
-                            </div>
-                            <div class="col-md-6 mb-2">
-
-                                <input name="TelefonoT" type="number" class="form-control" id="" placeholder="Tel" required>
-
-                            </div>
-                            <div class="col-md-6 mb-2">
-
-                                <input name="Estatus" type="number" class="form-control" id="" placeholder="Estatus" required>
-
-                            </div>
-                            <button class="btn btn-dark btn-sm" type="submit">Submit form</button>
-
-                        </form>
-
-
+                         </form>
+                       </div>
 
 
                     </div>
@@ -272,12 +259,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <td>{{$Alumno->Estatus}}</td>
 
                         <td>
-                            <div class='btn-group'>
-                                <a href="admin.RegistroAlumnos" class="btn btn-danger"><span class="glyphicon glyphicon- remove" aria-hidden="true"></span></a>
-                                <a href="#"  class="btn btn-warning"><span   class="glyphicon glyphicon-wrench"  aria-hidden="true"></span></a></div></td>
-
+                            <form method="POST" action="{{route('admin.RegistroAlumnos.destroy',$Alumno->idMatricula) }}"  >
+                                @method('DELETE')
+                                @csrf
+                                <div class='btn-group'>
+                                    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#editar-Alumno-{{$Alumno->idMatricula}}">
+                                        Editar
+                                    </button> &nbsp;  &nbsp; &nbsp;
+                                    <button href=""  type="submit" class="btn btn-danger" onclick="return confirm('Seguro que deseas eliminar este registro')"> Eliminar</button>
+                                </div></form></td>
                     </tr>
                     </tbody>
+                    @include('crud.editarAlumno')
                 @endforeach
             </table>
 
@@ -286,6 +279,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
 
 
-</div>
+
 </body>
 </html>

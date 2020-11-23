@@ -32,7 +32,7 @@
 
                         <div class="form-group">
 
-                            <input name="TelefonoAd" type="number" class="form-control" id="" placeholder="Telefono" value="{{$Admin->TelefonoAd}}" required>
+                            <input name="TelefonoAd" type="tel" class="form-control" id="" placeholder="Telefono" value="{{$Admin->TelefonoAd}}" required>
 
                         </div>
 
