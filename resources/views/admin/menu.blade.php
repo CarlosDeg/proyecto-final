@@ -98,29 +98,40 @@
 </nav>
 
 
+<nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item has-treeview ">
+                <a href="#" class="nav-link active">
+              <i class="nav-icon fa fa-book-open"></i>
+              <p>
+                Control
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a><br>
 
-
-            <li class="nav-item list-group">
+            <ul class="nav nav-treeview">
+<li class="nav-item">
                 <a href="Grupo" class="">
-                    <i class="far fa-user"></i>
+                    <i class="fa fa-users"></i>
                     <span>Grupos</span>
                 </a>
             </li><br><br>
-            <li class="nav-item list-group">
+           <li class="nav-item">
                 <a href="Graduado" class="">
-                    <i class="far fa-user"></i>
+                    <i class="fas fa-user-graduate"></i>
                     <span>Graduados</span>
                 </a>
             </li><br><br>
-            <li class="nav-item list-group">
+           <li class="nav-item">
                 <a href="Reportes" class="">
-                    <i class="far fa-user"></i>
+                    <i class="fa fa-clipboard"></i>
                     <span>Reportes</span>
                 </a>
             </li><br><br>
         </ul>
-   
-
+    </li>
+   </ul>
+</nav>
         <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
