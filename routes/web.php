@@ -29,6 +29,10 @@ Route::get('admin', function () {
 
 Route::get("/RegistroAdministrativo","AdministrativosC@index");
 Route::post("RegistroAdministrativo","AdministrativosC@store");
+Route::post("/admin/RegistroAdministrativo/{idAdminitrativo}/update","AdministrativosC@update")->name('admin.RegistroAdministrativo.update');
+
+Route::delete("/admin/RegistroAdministrativo/{idAdminitrativo}/destroy","AdministrativosC@destroy")->name('admin.RegistroAdministrativo.destroy');
+
 
 //-->ruta para registrar ALUMNOS//
 Route::get("/RegistroAlumnos","RegistroAlumnoC@index");

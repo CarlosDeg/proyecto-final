@@ -45,7 +45,7 @@ class AdministrativosC extends Controller
         $Administrativo->Puesto = $request->input("Puesto");
         $Administrativo->CorreoAd = $request->input("CorreoAd");
         $Administrativo->save();
-        $categorias = AdministrativoM::all();
+        $Administrativo = AdministrativoM::all();
 
         return redirect()->back();
     }
@@ -79,9 +79,18 @@ class AdministrativosC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $idAdminitrativo)
     {
-        //
+        $Administrativo =AdministrativoM::where('idAdminitrativo',$idAdminitrativo)->first();
+        $Administrativo ->NombreAd = $request->NombreAd;
+        $Administrativo ->ApellidoPAd = $request->ApellidoPAd;
+        $Administrativo ->ApellidoMAd = $request->ApellidoMAd;
+        $Administrativo ->TelefonoAd = $request->TelefonoAd;
+        $Administrativo ->Puesto = $request->Puesto;
+        $Administrativo ->CorreoAd = $request->CorreoAd;
+        $Administrativo->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -90,8 +99,17 @@ class AdministrativosC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idAdminitrativo)
     {
-        //
+        $Administrativo =AdministrativoM::where('idAdminitrativo',$idAdminitrativo)->first();
+
+        if ($Administrativo != null) {
+            $Administrativo->delete();
+
+            return redirect()->back();
+        }else
+        {
+            return redirect()->back();    }
+
     }
 }

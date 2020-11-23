@@ -10,7 +10,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/ccbca44be9.js" crossorigin="anonymous"></script>
-    <title>AdminLTE  | Habitacion</title>
+    <title>Admin | Administrativos </title>
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -42,17 +42,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </li>
     </ul>
 
-    <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
-        <div class="input-group input-group-sm">
-            <input class="form-control form-control-navbar" type="search" placeholder="Buscar" aria-label="Buscar">
-            <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-        </div>
-    </form>
+
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -149,80 +139,81 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </ul>
 </nav>
 <!-- fin del header --><br>
-<br>
 
 
-<div class="wrapper">
+
 
     <div class="content-wrapper">
-        <div class="container-fluid">
-            <div class="col-md-14">
-                <!-- Input addon -->
-                <div class="card card-info">
-                    <div class="card-header bg-dark">
-                        <h3 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nuevos Administrativos</font></font></h3>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-create-administrativos" >
+            Nuevo
+        </button>
+        <div    class="modal fade" id="modal-create-administrativos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Administrativos</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    <div class="card-body">
+                    <form action="RegistroAdministrativo" method="post" id="administrativos">
+                        @csrf
+                        <div class="modal-body">
 
-                        <form action="RegistroAdministrativo" method="post" >
-                            @csrf
-                            <div class="form-row ">
+                            <input type="hidden" name="idAdminitrativo" id="idAdminitrativo">
 
+                            <div class="form-group">
+                                <input name="NombreAd" type="text" class="form-control" id=""  placeholder="Nombre" required>
 
-                                <div class="col-md-6 mb-3">
-                                    <input name="NombreAd" type="text" class="form-control" id=""  placeholder="Nombre" required>
-
-                                </div>
-                                <div class="col-md-6 mb-3">
-
-                                    <input name="ApellidoPAd" type="text" class="form-control" id="" placeholder="Apellido P" >
-
-                                </div>
                             </div>
-                            <div class="form-row">
-                                <div class="col-md-6 mb-3">
-
-                                    <input name="ApellidoMAd" type="text" class="form-control" id="" placeholder="Apellido M" required>
-
-                                </div>
-
-                                <div class="col-md-6 mb-2">
-
-                                    <input name="TelefonoAd" type="number" class="form-control" id="" placeholder="Telefono" required>
-
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 mb-2">
-
-                                <input name="Puesto" type="text" class="form-control" id="" placeholder="Puesto" required>
+                            <div class="form-group">
+                                <input name="ApellidoPAd" type="text" class="form-control" id="" placeholder="Apellido P" >
 
                             </div>
 
-                            <div class="col-md-6 mb-2">
+                            <div class="form-group">
+                                <input name="ApellidoMAd" type="text" class="form-control" id="" placeholder="Apellido M" required>
 
-                                <input name="CorreoAd" type="text" class="form-control" id="" placeholder="Correo" required>
+                             </div>
+
+                            <div class="form-group">
+
+                                <input name="TelefonoAd" type="number" class="form-control" id="" placeholder="Telefono" required>
 
                             </div>
-                            <button class="btn btn-dark btn-sm" type="submit">Submit form</button>
-
-                        </form>
 
 
+                        <div class="form-group">
+                            <input name="Puesto" type="text" class="form-control" id="" placeholder="Puesto" required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <input name="CorreoAd" type="text" class="form-control" id="" placeholder="Correo" required>
+
+                        </div>
+                        </div>
 
 
-                    </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary btn-md" type="submit">Guardar</button>
+                        </div>
+                    </form>
+
                 </div>
-            </div>
 
-            <!--barra de busqueda-->
-            <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand">Administrativos registrados</a>
-                <form class="form-inline">
-                    <input name="search" class="form-control mr-sm-2" type="search" placeholder="Buscar  habitacion" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-                </form>
-            </nav>
+            </div>
+        </div>
+
+        <!--Tabla para mostrar los datos de el registro
+         /*
+
+        kdkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+        dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+        dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+
+        -->
             <!--TABLA -->
             <table class="table table-striped table-dark table-hover">
                 <thead>
@@ -250,12 +241,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <td>{{$Admin->CorreoAd}}</td>
 
                         <td>
-                            <div class='btn-group'>
-                                <a href="admin.RegistroAdministrativo" class="btn btn-danger"><span class="glyphicon glyphicon- remove" aria-hidden="true"></span></a>
-                                <a href="#"  class="btn btn-warning"><span   class="glyphicon glyphicon-wrench"  aria-hidden="true"></span></a></div></td>
-
+                            <form method="POST" action="{{route('admin.RegistroAdministrativo.destroy',$Admin->idAdminitrativo) }}"  >
+                                @method('DELETE')
+                                @csrf
+                                <div class='btn-group'>
+                                    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#editar-Administrativo-{{$Admin->idAdminitrativo}}">
+                                        Editar
+                                    </button> &nbsp;  &nbsp; &nbsp;
+                                    <button href=""  type="submit" class="btn btn-danger" onclick="return confirm('Seguro que deseas eliminar este registro')"> Eliminar</button>
+                                </div></form></td>
                     </tr>
                     </tbody>
+                    @include('crud.editarAdministrativo')
                 @endforeach
             </table>
 
@@ -263,7 +260,5 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
     </div>
 
-
-</div>
 </body>
 </html>

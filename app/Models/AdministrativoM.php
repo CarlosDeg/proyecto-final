@@ -9,5 +9,6 @@ class AdministrativoM extends Model
     //
 
     protected $table ='administrativos';
+    protected $primaryKey = 'idAdminitrativo';
 
 }
