@@ -80,9 +80,20 @@ class DocenteC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $idCedula)
     {
-        //
+        $docente =DocenteM::where('idCedula',$idCedula)->first();
+        $docente->NombreD = $request->NombreD;
+        $docente->ApellidoPD = $request->ApellidoPD;
+        $docente->ApellidoM = $request->ApellidoM;
+        $docente->CorreoD = $request->CorreoD;
+        $docente->Telefono = $request->Telefono;
+        $docente->Cedula = $request->Cedula;
+        $docente->Estatus = $request->Estatus;
+        $docente->save();
+
+
+        return redirect()->back();
     }
 
     /**
@@ -91,8 +102,16 @@ class DocenteC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idCedula)
     {
-        //
+        $docente =DocenteM::where('idCedula',$idCedula)->first();
+
+        if ($docente != null) {
+            $docente->delete();
+
+            return redirect()->back();
+        }else
+        {
+            return redirect()->back();    }
     }
 }

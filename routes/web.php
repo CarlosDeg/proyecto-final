@@ -43,6 +43,8 @@ Route::delete("/admin/RegistroAlumnos/{idMatricula}/destroy","RegistroAlumnoC@de
 //-->ruta para registrar Docentes editar,mostrar y eliminar//
 Route::get("/RegistroDocente","DocenteC@index");
 Route::post("RegistroDocente","DocenteC@store");
+Route::post("/admin/RegistroDocente/{idMatricula}/update","DocenteC@update")->name('admin.RegistroDocente.update');
+Route::delete("/admin/RegistroDocente/{idMatricula}/destroy","DocenteC@destroy")->name('admin.RegistroDocente.destroy');
 
 //-->ruta para registrar Personal editar,mostrar y eliminar//
 Route::get("/RegistroPersonal","PersonalC@index");
