@@ -1,4 +1,14 @@
-
+<! DOCTYPE html>
+<html>
+<html>
+    <meta charset = "utf-8" />
+    <meta http-equiv = "X-UA-Compatible" content = "IE = edge">
+    <title> Título de la página </title>
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+    <link rel = "stylesheet" type = "text / css" media = "screen" href = "main.css" />
+    <script src = "main.js"> </script>
+    </head>
+<body>
 
 
 <!-- header   -->
@@ -22,7 +32,7 @@
 
 <!-- Modal -->
 <div class="content-wrapper">
-    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#modal-create-Carrer">
+    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#modal-create-Carrer" >
         Crear
     </button>
     <div    class="modal fade" id="modal-create-Carrer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -38,7 +48,7 @@
                     @csrf
                 <div class="modal-body">
 
-
+                    <input type="hidden" name="idCarrera" id="idCarrera">
 
                     <div class="form-group">
                         <input name="Carrera" type="text" class="form-control" id="Carrera"  placeholder="Nombre de la carrera" required>
@@ -59,7 +69,7 @@
 
 
     <!--TABLA -->
-    <table class="table table-striped table-dark table-hover">
+    <table id="laravel_crud" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
         <thead>
         <tr>
             <th scope="col">Id</th>
@@ -92,6 +102,16 @@
 </div>
 
 </div>
+<script>
+    $(document).ready(function () {
+        $('#laravel_crud').DataTable({
+            "paging": false // false to disable pagination (or any other option)
+        });
+        $('.dataTables_length').addClass('bs-select');
+    });
+
+</script>
 
 
-
+</body>
+</html>

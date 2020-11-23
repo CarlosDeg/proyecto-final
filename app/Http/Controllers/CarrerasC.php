@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CarrerasM;
 use Illuminate\Http\Request;
-use Flash;
+use Illuminate\Support\Facades\DB;
 
 class CarrerasC extends Controller
 {
@@ -15,9 +15,9 @@ class CarrerasC extends Controller
      */
     public function index()
     {
-        $carreras = CarrerasM::all();
 
 
+        $carreras = DB::table('carrera')->paginate(5);
 
         return view('admin.Carreras',compact('carreras'));;
     }
