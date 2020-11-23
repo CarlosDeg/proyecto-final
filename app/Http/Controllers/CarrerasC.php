@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CarrerasM;
 use Illuminate\Http\Request;
+use Flash;
 
 class CarrerasC extends Controller
 {
@@ -83,10 +84,10 @@ class CarrerasC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$idC)
+    public function update(Request $request,$idCarrera)
     {
 
-        $carreras = CarrerasM::find($idC);
+        $carreras =CarrerasM::where('idCarrera',$idCarrera)->first();
         $carreras ->Carrera = $request->Carrera;
         $carreras->save();
 
@@ -100,12 +101,25 @@ class CarrerasC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function delete(Request $request,$idC)
+    public function destroy($idCarrera)
     {
-        $carreras = CarrerasM::find($idC);
-
+       /* $carreras = CarrerasM::find($idCarrera);
         $carreras->delete();
+        return redirect()->back();*/
 
-        return redirect()->back();
+        $carreras =CarrerasM::where('idCarrera',$idCarrera)->first();
+
+        if ($carreras != null) {
+            $carreras->delete();
+
+            return redirect()->back();
+        }else
+        {
+            return redirect()->back();    }
+
+
+
+
+
     }
 }

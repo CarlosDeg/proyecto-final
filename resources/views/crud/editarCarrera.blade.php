@@ -9,11 +9,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{route(crud.Carreras.update,$carrera->idCarrera)}}" method="post" id="editform">
+                <form action="{{route('admin.Carreras.update',$carrera->idCarrera)}}" method="post" id="editform">
                     @csrf
-
-                    <input type="hidden" id="idCarrera" name="idCarrera" value="">
-
                     <div class="form-group">
                         <input name="Carrera" type="text" class="form-control" id="Carrera"  placeholder="Nombre de la carrera" value="{{$carrera->Carrera}}"    required>
 
@@ -28,5 +25,5 @@
         </div>
     </div>
 </div>
-</div>
+
 <!--fin del d-->

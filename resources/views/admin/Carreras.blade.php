@@ -20,13 +20,6 @@
         </ul>
 </nav>
 
-
-
-
-
-
-
-
 <!-- Modal -->
 <div class="content-wrapper">
     <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#modal-create-Carrer">
@@ -66,12 +59,10 @@
 
 
     <!--TABLA -->
-    <div class="row">
-        <div class="col-12">
-    <table  class="table table-bordered table-striped" id="laravel_crud">
+    <table class="table table-striped table-dark table-hover">
         <thead>
         <tr>
-            <th scope="col">IdCarrera</th>
+            <th scope="col">Id</th>
             <th scope="col">Carrera</th>
             <th scope="col">Acciones</th>
         </tr>
@@ -80,19 +71,17 @@
             <tbody>
 
             <tr>
-                <td>{{ $carrera->idCarrera }}</td>
+                <td>{{$carrera->idCarrera}}</td>
                 <td>{{$carrera->Carrera}}</td>
-                <div>
+                <td><form method="POST" action="{{route('admin.Carreras.destroy',$carrera->idCarrera) }}"  >
+                        @method('DELETE')
+                        @csrf
                     <div class='btn-group'>
                         <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#editar-carrera-{{$carrera->idCarrera}}">
-                            Editar
-                        </button>
-                    </div>
-                        <form action="{{Route('crud.Carreras.delete',$carrera->idcarrera)}}" method="post">
-                            @csrf
-                            @method('DELETE')
-                        <button  class="btn btn-danger">
-                            Eliminar </button></form></div></td></td>
+                           Editar
+                        </button> &nbsp;  &nbsp; &nbsp;
+                        <button href="" id="eli" type="submit" class="btn btn-danger" onclick="return confirm('Seguro que deseas eliminar este registro')"> Eliminar</button>
+                    </div></form></td>
 
             </tr>
             </tbody>
@@ -100,8 +89,7 @@
         @endforeach
     </table>
 
-        </div>
-    </div>
+</div>
 
 </div>
 

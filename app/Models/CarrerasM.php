@@ -6,12 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class CarrerasM extends Model
 {
-    protected  $table = 'carrera';
 
-
-    protected $fillable = [
-        'idCarrera', 'Carrera'
-    ];
+protected $table = 'carrera';
+    protected $primaryKey = 'idCarrera';
 
 
 }

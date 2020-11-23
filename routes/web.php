@@ -53,8 +53,8 @@ Route::post("Semestre","SemestreC@store");
 //-->ruta para registrar Carreras//
 Route::get("/Carreras","CarrerasC@index");
 Route::post("Carreras","CarrerasC@store");
-Route::post("/crud/Carreras/{idC}/update","CarrerasC@update")->name('crud.Carreras.update');
-Route::get("/crud/Carreras/{idC}/delete","CarrerasC@delete")->name('crud.Carreras.delete');
+Route::post("/admin/Carreras/{idCarrera}/update","CarrerasC@update")->name('admin.Carreras.update');
+Route::delete("/admin/Carreras/{idCarrera}/destroy","CarrerasC@destroy")->name('admin.Carreras.destroy');
 
 
 
