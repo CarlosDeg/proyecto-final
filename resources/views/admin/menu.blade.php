@@ -15,9 +15,6 @@
         <span class="brand-text font-weight-light  ">Administrador</span>
     </a><br><br>
 
-    <!-- Sidebar -->
-
-
     <div class="sidebar "><!--MENU PARA MOSTRAR DIFERENTES MENUS DENTRO DEL ADMIN-->
 <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -96,7 +93,6 @@
 </li>
 </ul>
 </nav>
-
 
 <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
