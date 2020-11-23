@@ -1,3 +1,12 @@
+<!-- despliege de menu -->
+ <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+      </li>
+  </ul>
+</nav>
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
@@ -7,56 +16,90 @@
     </a><br><br>
 
     <!-- Sidebar -->
+
+
     <div class="sidebar "><!--MENU PARA MOSTRAR DIFERENTES MENUS DENTRO DEL ADMIN-->
-        <ul class="sidebar-menu" >
-            <li class="nav-item list-group">
-                <a href="contenido" class="">
-                    <i class="fa fa-home"></i>
-                    <span>usuarios</span>
-                </a>
-            </li><br><br>
-            <li class="nav-item list-group">
+<nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item has-treeview ">
+                <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Usuarios
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a><br>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
                 <a href="RegistroAdministrativo" class="">
-                    <i class="far fa-file-image"></i>
+                    <i class="far fa-user"></i>
                     <span> Administrativos</span>
-                </a>
-            </li><br><br>
-            <li class="nav-item list-group">
+                </a><br><br>
+            </li>
+            <li class="nav-item">
                 <a href="RegistroAlumnos" class="">
-                    <i class="fas fa-hamburger"></i>
+                    <i class="fas fa-user-graduate"></i>
                     <span>Alumnos</span>
                 </a>
             </li><br><br>
-            <li class="nav-item list-group">
+            <li class="nav-item">
                 <a href="RegistroDocente" class="">
-                    <i class="fas fa-map-marked"></i>
+                    <i class="fas fa-chalkboard-teacher"></i>
                     <span>Docentes</span>
                 </a>
             </li><br><br>
-            <li class="nav-item list-group">
+            <li class="nav-item">
                 <a href="RegistroPersonal" class="">
-                    <i class="fas fa-wifi"></i>
+                    <i class="fas fa-users"></i>
                     <span>Personal</span>
                 </a>
             </li><br><br>
-            <li class="nav-item list-group">
+        </ul>
+             </li>
+</ul>
+</nav>
+
+
+
+<nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item has-treeview ">
+                <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-bookmark"></i>
+              <p>
+                Materiales 
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a><br>
+
+            <ul class="nav nav-treeview">
+            <li class="nav-item">
                 <a href="Materias" class="">
-                    <i class="far fa-images"></i>
+                    <i class="fas fa-book-open"></i>
                     <span>Materias</span>
                 </a>
             </li><br><br>
-            <li class="nav-item list-group">
+            <li class="nav-item">
                 <a href="Semestre" class="">
-                    <i class="far fa-envelope"></i>
+                    <i class="fas fa-book-reader"></i>
                     <span>Semestre</span>
                 </a>
             </li><br><br>
-            <li class="nav-item list-group">
+           <li class="nav-item">
                 <a href="Carreras" class="">
-                    <i class="far fa-user"></i>
+                    <i class="fas fa-school"></i>
                     <span>Carreras</span>
                 </a>
             </li><br><br>
+        </ul>
+</li>
+</ul>
+</nav>
+
+
+
+
             <li class="nav-item list-group">
                 <a href="Grupo" class="">
                     <i class="far fa-user"></i>
@@ -76,7 +119,7 @@
                 </a>
             </li><br><br>
         </ul>
-
+   
 
         <!-- /.sidebar-menu -->
     </div>
