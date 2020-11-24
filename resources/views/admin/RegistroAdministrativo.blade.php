@@ -23,14 +23,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 <!-- header   -->
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<nav class="main-header navbar navbar-expand navbar-cyan navbar-light">
 
 
 @extends('admin.principal')
 
 
 <!-- Left navbar links -->
-    <ul class="navbar-nav">
+    <ul class="navbar-nav ">
         <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
         </li>
@@ -45,7 +45,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
     <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ml-auto ">
         <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
@@ -150,7 +150,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div    class="modal fade" id="modal-create-administrativos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header navbar-cyan">
                         <h5 class="modal-title" id="exampleModalLabel">Administrativos</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -158,14 +158,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
                     <form action="RegistroAdministrativo" method="post" id="administrativos">
                         @csrf
-                        <div class="modal-body">
+                        <div class="modal-body ">
 
-                            <input type="hidden" name="idAdminitrativo" id="idAdminitrativo">
+                            <input type="hidden" 
+                             name="idAdminitrativo" id="idAdminitrativo">
 
-                            <div class="form-group">
+
+                            
+                  <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-address-book"></i></span>
+                  </div>
+                            
                                 <input name="NombreAd" type="text" class="form-control" id=""  placeholder="Nombre" required>
 
                             </div>
+                        </div>
+                   
+                    
                             <div class="form-group">
                                 <input name="ApellidoPAd" type="text" class="form-control" id="" placeholder="Apellido P" >
 
@@ -196,8 +207,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
 
 
-                        <div class="modal-footer">
-                            <button class="btn btn-lg btn-primary" type="submit">Guardar</button>
+                        <div class="modal-footer ">
+                            <button class="btn btn-lg navbar-teal" type="submit">Guardar</button>
                         </div>
                     </form>
 
