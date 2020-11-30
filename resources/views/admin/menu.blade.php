@@ -1,13 +1,5 @@
-<!-- despliege de menu -->
- <nav class="main-header navbar navbar-expand navbar-cyan navbar-light">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
-      </li>
-  </ul>
-</nav>
-<!-- Main Sidebar Container -->teal
+
+<!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-teal elevation-4 navbar-cyan">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
@@ -65,7 +57,7 @@
                 <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-bookmark"></i>
               <p>
-                Materiales 
+                Materiales
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a><br>
@@ -128,6 +120,6 @@
     </li>
    </ul>
 </nav>
-
+    </div>
     <!-- /.sidebar -->
 </aside>
