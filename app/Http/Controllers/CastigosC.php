@@ -80,9 +80,15 @@ class CastigosC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $idReportes)
     {
-        //
+        $reportes =CastigosM::where('idReportes',$idReportes)->first();
+        $reportes ->NombreR = $request->NombreR;
+        $reportes ->Castigo = $request->Castigo;
+        $reportes ->idMatricula = $request->idMatricula;
+        $reportes->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -91,8 +97,18 @@ class CastigosC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idReportes)
     {
-        //
+        $reportes =CastigosM::where('idReportes',$idReportes)->first();
+
+        if ($reportes != null) {
+            $reportes->delete();
+
+            return redirect()->back();
+        }else
+        {
+            return redirect()->back();
+        }
+
     }
 }

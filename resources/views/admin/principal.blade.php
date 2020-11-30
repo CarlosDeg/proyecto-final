@@ -55,6 +55,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 </div>
 
+
 <!-- jQuery -->
 <script src="adminlte/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
@@ -68,7 +69,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="adminlte/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-  $.widget.bridge('uibutton', $.ui.button)
+    $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
 <script src="adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -96,11 +97,5 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="adminlte/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="adminlte/dist/js/demo.js"></script>
-
-
-
-
-
-
 </body>
 </html>

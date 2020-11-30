@@ -7,4 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class CastigosM extends Model
 {
     protected $table ='reportes';
+    protected $primaryKey = 'idReportes';
 }

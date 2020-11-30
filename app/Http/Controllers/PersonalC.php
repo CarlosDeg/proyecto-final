@@ -80,9 +80,19 @@ class PersonalC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $idPersonal)
     {
-        //
+        $personal =PersonalM::where('idPersonal',$idPersonal)->first();
+        $personal->ApellidoPP= $request->ApellidoPP;
+        $personal->ApellidoMP = $request->ApellidoMP;
+        $personal->CorreoP = $request->CorreoP;
+        $personal->DireccionP = $request->DireccionP;
+        $personal->EdadP = $request->EdadP;
+        $personal->TelefonoP = $request->TelefonoP;
+
+        $personal->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -91,8 +101,16 @@ class PersonalC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idPersonal)
     {
-        //
+        $personal =PersonalM::where('idPersonal',$idPersonal)->first();
+
+        if ($personal != null) {
+            $personal->delete();
+
+            return redirect()->back();
+        }else
+        {
+            return redirect()->back();    }
     }
 }

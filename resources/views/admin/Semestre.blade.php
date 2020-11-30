@@ -152,19 +152,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <br>
 
 
-<div class="wrapper">
+
 
     <div class="content-wrapper">
-        <div class="container-fluid">
-            <div class="col-md-14">
-                <!-- Input addon -->
-                <div class="card card-info">
-                    <div class="card-header bg-dark">
-                        <h3 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nuevos </font></font></h3>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-create-semestre" >
+            Nuevo
+        </button><br><br>
+        <div    class="modal fade" id="modal-create-semestre" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Semestres</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     <div class="card-body">
 
-                        <form action="Semestre" method="post" >
+                    <form action="Semestre" method="post" >
                             @csrf
                             <div class="form-row ">
 
@@ -194,19 +199,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 
-
-                    </div>
                 </div>
-            </div>
 
-            <!--barra de busqueda-->
-            <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand">Semestres</a>
-                <form class="form-inline">
-                    <input name="search" class="form-control mr-sm-2" type="search" placeholder="Buscar  habitacion" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-                </form>
-            </nav>
+            </div>
+        </div>
+
+
             <!--TABLA -->
             <table class="table table-striped table-dark table-hover">
                 <thead>
@@ -230,12 +228,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                         <td>
-                            <div class='btn-group'>
-                                <a href="admin.Semestre" class="btn btn-danger"><span class="glyphicon glyphicon- remove" aria-hidden="true"></span></a>
-                                <a href="#"  class="btn btn-warning"><span   class="glyphicon glyphicon-wrench"  aria-hidden="true"></span></a></div></td>
-
+                            <form method="POST" action="{{route('admin.Semestre.destroy',$semest->idSemestre) }}"  >
+                                @method('DELETE')
+                                @csrf
+                                <div class='btn-group'>
+                                    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#editar-semestre-{{$semest->idSemestre}}">
+                                        Editar
+                                    </button> &nbsp;  &nbsp; &nbsp;
+                                    <button href=""  type="submit" class="btn btn-danger" onclick="return confirm('Seguro que deseas eliminar este registro')"> Eliminar</button>
+                                </div></form></td>
                     </tr>
                     </tbody>
+                    @include('crud.editarSemestre')
                 @endforeach
             </table>
 

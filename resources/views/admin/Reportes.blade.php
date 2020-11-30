@@ -231,12 +231,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                         <td>
-                            <div class='btn-group'>
-                                <a href="admin.Reportes" class="btn btn-danger"><span class="glyphicon glyphicon- remove" aria-hidden="true"></span></a>
-                                <a href="#"  class="btn btn-warning"><span   class="glyphicon glyphicon-wrench"  aria-hidden="true"></span></a></div></td>
-
+                            <form method="POST" action="{{route('admin.Reportes.destroy',$reporte->idReportes) }}"  >
+                                @method('DELETE')
+                                @csrf
+                                <div class='btn-group'>
+                                    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#editar-reporte-{{$reporte->idReportes}}">
+                                        Editar
+                                    </button> &nbsp;  &nbsp; &nbsp;
+                                    <button href=""  type="submit" class="btn btn-danger" onclick="return confirm('Seguro que deseas eliminar este registro')"> Eliminar</button>
+                                </div></form></td>
                     </tr>
                     </tbody>
+                    @include('crud.editarReportes')
                 @endforeach
             </table>
 

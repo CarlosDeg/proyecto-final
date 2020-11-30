@@ -10,7 +10,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/ccbca44be9.js" crossorigin="anonymous"></script>
-    <title>Grupo</title>
+    <title>Grupos</title>
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -19,13 +19,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="hold-transition sidebar-mini">
+<div class="hold-transition sidebar-mini">
 
 
 <!-- header   -->
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-@extends('admin.menu')
-@extends('admin.footer')
+
+
+@extends('admin.principal')
 <!-- Left navbar links -->
     <ul class="navbar-nav">
         <li class="nav-item">
@@ -39,17 +40,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </li>
     </ul>
 
-    <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
-        <div class="input-group input-group-sm">
-            <input class="form-control form-control-navbar" type="search" placeholder="Buscar" aria-label="Buscar">
-            <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-        </div>
-    </form>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -149,18 +139,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <br>
 
 
-<div class="wrapper">
 
-    <div class="content-wrapper">
-        <div class="container-fluid">
-            <div class="col-md-14">
-                <!-- Input addon -->
-                <div class="card card-info">
-                    <div class="card-header bg-dark">
-                        <h3 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nuevas Habitaciones</font></font></h3>
+<div class="content-wrapper">
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-create-grupo" >
+            Nuevo
+        </button><br><br>
+        <div    class="modal fade" id="modal-create-grupo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Nuevos grupos</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     <div class="card-body">
-
                         <form action="Grupo" method="post" >
                             @csrf
                             <div class="form-row ">
@@ -210,20 +203,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </form>
 
 
-
-
                     </div>
+
                 </div>
             </div>
-
-            <!--barra de busqueda-->
-            <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand">Habitaciones Registradas</a>
-                <form class="form-inline">
-                    <input name="search" class="form-control mr-sm-2" type="search" placeholder="Buscar  habitacion" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-                </form>
-            </nav>
+        </div>
             <!--TABLA -->
             <table class="table table-striped table-dark table-hover">
                 <thead>
@@ -250,21 +234,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <td>{{$grupo->idCarrera}}</td>
                         <td>{{$grupo->idSemestre}}</td>
                         <td>
-                            <div class='btn-group'>
-                                <a href="admin.Grupo" class="btn btn-danger"><span class="glyphicon glyphicon- remove" aria-hidden="true"></span></a>
-                                <a href="#"  class="btn btn-warning"><span   class="glyphicon glyphicon-wrench"  aria-hidden="true"></span></a></div></td>
-
+                            <form method="POST" action="{{route('admin.Grupo.destroy',$grupo->idGrupo) }}"  >
+                                @method('DELETE')
+                                @csrf
+                                <div class='btn-group'>
+                                    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#editar-grupo-{{$grupo->idGrupo}}">
+                                        Editar
+                                    </button> &nbsp;  &nbsp; &nbsp;
+                                    <button href=""  type="submit" class="btn btn-danger" onclick="return confirm('Seguro que deseas eliminar este registro')"> Eliminar</button>
+                                </div></form></td>
                     </tr>
                     </tbody>
+                    @include('crud.editarGrupo')
                 @endforeach
 
             </table>
 
 
-        </div>
+
     </div>
-
-
 </div>
+</div>
+
+
+
 </body>
 </html>

@@ -75,9 +75,16 @@ class MateriasC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $idMateria)
     {
-        //
+        $materias =MateriasM::where('idMateria',$idMateria)->first();
+        $materias->NombreM = $request->NombreM;
+        $materias->Horas = $request->Horas;
+
+        $materias->save();
+
+
+        return redirect()->back();
     }
 
     /**
@@ -86,8 +93,17 @@ class MateriasC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idMateria)
     {
-        //
+        $materias =MateriasM::where('idMateria',$idMateria)->first();
+
+        if ($materias != null) {
+            $materias->delete();
+
+            return redirect()->back();
+        }else {
+            return redirect()->back();
+        }
     }
+
 }

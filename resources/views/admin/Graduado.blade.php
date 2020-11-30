@@ -152,23 +152,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <br>
 
 
-<div class="wrapper">
+
 
     <div class="content-wrapper">
-        <div class="container-fluid">
-            <div class="col-md-14">
-                <!-- Input addon -->
-                <div class="card card-info">
-                    <div class="card-header bg-dark">
-                        <h3 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Graduados </font></font></h3>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-create-graduado" >
+            Nuevo
+        </button><br><br>
+        <div    class="modal fade" id="modal-create-graduado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Graduados</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     <div class="card-body">
 
                         <form action="Graduado" method="post" >
                             @csrf
                             <div class="form-row ">
-
-
                                 <div class="col-md-6 mb-3">
                                     <input name="promedioGeneral" type="text" class="form-control" id=""  placeholder="Promedio" required>
 
@@ -210,15 +213,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
                 </div>
             </div>
-
-            <!--barra de busqueda-->
-            <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand">Carrera</a>
-                <form class="form-inline">
-                    <input name="search" class="form-control mr-sm-2" type="search" placeholder="Buscar  habitacion" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-                </form>
-            </nav>
+        </div>
             <!--TABLA -->
             <table class="table table-striped table-dark table-hover">
                 <thead>
@@ -241,15 +236,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <td>{{$graduado->idGrupo}}</td>
                         <td>{{$graduado->idMatricula}}</td>
 
-
-
                         <td>
-                            <div class='btn-group'>
-                                <a href="admin.Graduado" class="btn btn-danger"><span class="glyphicon glyphicon- remove" aria-hidden="true"></span></a>
-                                <a href="#"  class="btn btn-warning"><span   class="glyphicon glyphicon-wrench"  aria-hidden="true"></span></a></div></td>
-
+                            <form method="POST" action="{{route('admin.Graduado.destroy',$graduado->idGraduado) }}"  >
+                                @method('DELETE')
+                                @csrf
+                                <div class='btn-group'>
+                                    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#editar-graduado-{{$graduado->idGraduado}}">
+                                        Editar
+                                    </button> &nbsp;  &nbsp; &nbsp;
+                                    <button href=""  type="submit" class="btn btn-danger" onclick="return confirm('Seguro que deseas eliminar este registro')"> Eliminar</button>
+                                </div></form></td>
                     </tr>
                     </tbody>
+                    @include('crud.editarGraduado')
                 @endforeach
             </table>
 

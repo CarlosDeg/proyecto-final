@@ -79,9 +79,17 @@ class SemestreC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $idSemestre)
     {
-        //
+        $semestre =SemestreM::where('idSemestre',$idSemestre)->first();
+        $semestre->Semestre = $request->Semestre;
+        $semestre->CicloI = $request->CicloI;
+        $semestre->CicloF = $request->CicloF;
+
+        $semestre->save();
+
+
+        return redirect()->back();
     }
 
     /**
@@ -90,8 +98,17 @@ class SemestreC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idSemestre)
     {
-        //
+        $semestre =SemestreM::where('idSemestre',$idSemestre)->first();
+
+        if ($semestre != null) {
+            $semestre->delete();
+
+            return redirect()->back();
+        }else {
+            return redirect()->back();
+        }
     }
+
 }

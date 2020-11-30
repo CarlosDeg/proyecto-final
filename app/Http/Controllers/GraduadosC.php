@@ -83,9 +83,18 @@ class GraduadosC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $idGraduado)
     {
-        //
+        $graduados =GraduadosM::where('idGraduado',$idGraduado)->first();
+        $graduados->promedioGeneral = $request->promedioGeneral;
+        $graduados->idGrupo = $request->idGrupo;
+        $graduados->idMatricula = $request->idMatricula;
+
+
+        $graduados->save();
+
+
+        return redirect()->back();
     }
 
     /**
@@ -94,8 +103,18 @@ class GraduadosC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idGraduado)
     {
-        //
+
+        $graduados =GraduadosM::where('idGraduado',$idGraduado)->first();
+
+
+        if ($graduados != null) {
+            $graduados->delete();
+
+            return redirect()->back();
+        }else {
+            return redirect()->back();
+        }
     }
 }

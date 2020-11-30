@@ -50,13 +50,21 @@ Route::delete("/admin/RegistroDocente/{idMatricula}/destroy","DocenteC@destroy")
 Route::get("/RegistroPersonal","PersonalC@index");
 Route::post("RegistroPersonal","PersonalC@store");
 
+Route::post("/admin/RegistroPersonal/{idPersonal}/update","PersonalC@update")->name('admin.RegistroPersonal.update');
+Route::delete("/admin/RegistroPersonal/{idPersonal}/destroy","PersonalC@destroy")->name('admin.RegistroPersonal.destroy');
+
 //-->ruta para registrar Materias editar,mostrar y eliminar//
 Route::get("/Materias","MateriasC@index");
 Route::post("Materias","MateriasC@store");
+Route::post("/admin/Materias/{idMateria}/update","MateriasC@update")->name('admin.Materias.update');
+Route::delete("/admin/Materias/{idMateria}/destroy","MateriasC@destroy")->name('admin.Materias.destroy');
 
 //-->ruta para registrar Semestre editar,mostrar y eliminar//
 Route::get("/Semestre","SemestreC@index");
 Route::post("Semestre","SemestreC@store");
+Route::post("/admin/Semestre/{idSemestre}/update","SemestreC@update")->name('admin.Semestre.update');
+Route::delete("/admin/Semestre/{idSemestre}/destroy","SemestreC@destroy")->name('admin.Semestre.destroy');
+
 
 //-->ruta para registrar Carreras editar,mostrar y eliminar//
 Route::get("/Carreras","CarrerasC@index");
@@ -67,11 +75,19 @@ Route::delete("/admin/Carreras/{idCarrera}/destroy","CarrerasC@destroy")->name('
 //-->ruta para registrar Grupos editar,mostrar y eliminar//
 Route::get("/Grupo","GrupoC@index");
 Route::post("Grupo","GrupoC@store");
+Route::post("/admin/Grupo/{idGrupo}/update","GrupoC@update")->name('admin.Grupo.update');
+Route::delete("/admin/Grupo/{idGrupo}/destroy","GrupoC@destroy")->name('admin.Grupo.destroy');
 
 //-->ruta para registrar Graduados editar,mostrar y eliminar//
 Route::get("/Graduado","GraduadosC@index");
 Route::post("Graduado","GraduadosC@store");
+Route::post("/admin/Graduado/{idGraduado}/update","GraduadosC@update")->name('admin.Graduado.update');
+Route::delete("/admin/Graduado/{idGraduado}/destroy","GraduadosC@destroy")->name('admin.Graduado.destroy');
+
 //-->ruta para registrar Castigos editar,mostrar y eliminar//
 Route::get("/Reportes","CastigosC@index");
 Route::post("Reportes","CastigosC@store");
+Route::post("/admin/Reportes/{idGrupo}/update","CastigosC@update")->name('admin.Reportes.update');
+Route::delete("/admin/Reportes/{idGrupo}/destroy","CastigosC@destroy")->name('admin.Reportes.destroy');
+
 

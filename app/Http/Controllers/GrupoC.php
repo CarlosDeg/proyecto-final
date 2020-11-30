@@ -88,9 +88,19 @@ class GrupoC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $idGrupo)
     {
-        //
+        $grupos =GrupoM::where('idGrupo',$idGrupo)->first();
+        $grupos->Grupo = $request->Grupo;
+        $grupos->FechaI = $request->FechaI;
+        $grupos->FechaF = $request->FechaF;
+        $grupos->idCarrera = $request->idCarrera;
+        $grupos->idSemestre = $request->idSemestre;
+
+        $grupos->save();
+
+
+        return redirect()->back();
     }
 
     /**
@@ -99,8 +109,17 @@ class GrupoC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idGrupo)
     {
-        //
+        $grupos =GrupoM::where('idGrupo',$idGrupo)->first();
+
+        if ($grupos != null) {
+            $grupos->delete();
+
+            return redirect()->back();
+        }else {
+            return redirect()->back();
+        }
     }
+
 }

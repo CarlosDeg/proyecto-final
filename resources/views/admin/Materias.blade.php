@@ -40,17 +40,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </li>
     </ul>
 
-    <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
-        <div class="input-group input-group-sm">
-            <input class="form-control form-control-navbar" type="search" placeholder="Buscar" aria-label="Buscar">
-            <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-        </div>
-    </form>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -152,21 +141,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 
-
-
-
-
-<div class="wrapper">
-
-    <div class="content-wrapper">
-        <div class="container-fluid">
-            <div class="col-md-14">
-                <!-- Input addon -->
-                <div class="card card-info">
-                    <div class="card-header bg-dark">
-                        <h3 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nuevas Materias</font></font></h3>
-                    </div>
-                    <div class="card-body">
+<div class="content-wrapper">
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-create-materia" >
+        Nuevo
+    </button><br><br>
+    <div    class="modal fade" id="modal-create-materia" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Nuevos Docentes</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="card-body">
 
                         <form action="Materias" method="post" >
                             @csrf
@@ -174,35 +162,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                                 <div class="col-md-6 mb-3">
-                                    <input name="NombreM" type="text" class="form-control" id=""  placeholder="Materia" required>
+                                    <input name="NombreM" type="text" class="form-control" id=""  placeholder="Materia"  required>
 
                                 </div>
                                 <div class="col-md-6 mb-3">
 
-                                    <input name="Horas" type="time" class="form-control" id="" placeholder="Apellido P" >
+                                    <input name="Horas" type="time" class="form-control" id="" required  >
 
                                 </div>
                             </div>
 
                             <button class="btn btn-dark btn-sm" type="submit">Submit form</button>
+                        </form>
 
                         </form>
 
 
-
-
-                    </div>
                 </div>
-            </div>
 
-            <!--barra de busqueda-->
-            <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand">Materias registrados</a>
-                <form class="form-inline">
-                    <input name="search" class="form-control mr-sm-2" type="search" placeholder="Buscar  habitacion" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-                </form>
-            </nav>
+            </div>
+        </div>
+    </div>
+
+
             <!--TABLA -->
             <table class="table table-striped table-dark table-hover">
                 <thead>
@@ -222,15 +204,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <td>{{$materia->NombreM}}</td>
                         <td>{{$materia->Horas}}</td>
 
-
-
-                        <td>
+                      <td>
+                        <form method="POST" action="{{route('admin.Materias.destroy',$materia->idMateria) }}"  >
+                            @method('DELETE')
+                            @csrf
                             <div class='btn-group'>
-                                <a href="admin.Materias" class="btn btn-danger"><span class="glyphicon glyphicon- remove" aria-hidden="true"></span></a>
-                                <a href="#"  class="btn btn-warning"><span   class="glyphicon glyphicon-wrench"  aria-hidden="true"></span></a></div></td>
-
+                                <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#editar-materia-{{$materia->idMateria}}">
+                                    Editar
+                                </button> &nbsp;  &nbsp; &nbsp;
+                                <button href=""  type="submit" class="btn btn-danger" onclick="return confirm('Seguro que deseas eliminar este registro')"> Eliminar</button>
+                            </div></form></td>
                     </tr>
                     </tbody>
+                    @include('crud.editarMateria')
                 @endforeach
             </table>
 

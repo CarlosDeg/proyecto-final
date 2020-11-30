@@ -4,13 +4,13 @@
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-<html lang="en">
+<div lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/ccbca44be9.js" crossorigin="anonymous"></script>
-    <title>AdminLTE  | Habitacion</title>
+    <title>Admin  | Personal</title>
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -19,7 +19,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="hold-transition sidebar-mini">
+<div class="hold-transition sidebar-mini">
 
 
 <!-- header   -->
@@ -152,15 +152,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <br>
 
 
-<div class="wrapper">
+
 
     <div class="content-wrapper">
-        <div class="container-fluid">
-            <div class="col-md-14">
-                <!-- Input addon -->
-                <div class="card card-info">
-                    <div class="card-header bg-dark">
-                        <h3 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nuevo Personal</font></font></h3>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-create-personal" >
+            Nuevo
+        </button><br><br>
+        <div    class="modal fade" id="modal-create-personal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Nuevo Personal</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     <div class="card-body">
 
@@ -220,14 +225,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
             </div>
 
-            <!--barra de busqueda-->
-            <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand">Personal registrados</a>
-                <form class="form-inline">
-                    <input name="search" class="form-control mr-sm-2" type="search" placeholder="Buscar  habitacion" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-                </form>
-            </nav>
+        </div>
             <!--TABLA -->
             <table class="table table-striped table-dark table-hover">
                 <thead>
@@ -246,7 +244,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 @foreach ( $personal as  $person)
                     <tbody>
 
-                    <tr>
+                    <d>
                         <td>{{$person->idPersonal}}</td>
                         <td>{{$person->NombreP}}</td>
                         <td>{{$person->ApellidoPP}}</td>
@@ -255,15 +253,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <td>{{$person->DireccionP}}</td>
                         <td>{{$person->EdadP}}</td>
                         <td>{{$person->TelefonoP}}</td>
+                    <td>
 
-
-                        <td>
+                        <form method="POST" action="{{route('admin.RegistroPersonal.destroy',$person->idPersonal) }}"  >
+                            @method('DELETE')
+                            @csrf
                             <div class='btn-group'>
-                                <a href="admin.RegistroPersonal" class="btn btn-danger"><span class="glyphicon glyphicon- remove" aria-hidden="true"></span></a>
-                                <a href="#"  class="btn btn-warning"><span   class="glyphicon glyphicon-wrench"  aria-hidden="true"></span></a></div></td>
-
+                                <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#editar-personal-{{$person->idPersonal}}">
+                                    Editar
+                                </button> &nbsp;  &nbsp; &nbsp;
+                                <button href=""  type="submit" class="btn btn-danger" onclick="return confirm('Seguro que deseas eliminar este registro')"> Eliminar</button>
+                            </div></form></td>
                     </tr>
                     </tbody>
+                    @include('crud.editarPersonal')
                 @endforeach
             </table>
 
@@ -272,6 +275,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
 
 
-</div>
+
 </body>
 </html>

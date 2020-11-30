@@ -7,4 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class GrupoM extends Model
 {
     protected $table = 'grupo';
+    protected $primaryKey = 'idGrupo';
 }
