@@ -174,29 +174,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="form-row ">
 
 
-                                <div class="col-md-6 mb-3">
-                                    <input name="Semestre" type="text" class="form-control" id=""  placeholder="cuatrimestre" required>
 
-                                </div>
-                            </div>
-                                <div class="col-md-6 mb-3">
+                                    <input name="Semestre" type="text" class="form-control form-control-md" id=""  placeholder="cuatrimestre" required>
 
-                                    <input name="CicloI" type="date" class="form-control" id="" placeholder="Inicio de curso" >
 
-                                </div></div>
+                            </div><br>
+                                <div class="form-row">
 
-                            <div class="form-row">
-                                <div class="col-md-6 mb-3">
+                                    <input name="CicloI" type="date" class="form-control form-control-md" id="" placeholder="Inicio de curso" >
 
-                                    <input name="CicloF" type="date" class="form-control" id="" placeholder="Fin de curso" required>
+                                </div><br>
 
-                                </div>
+                                <div class="form-row">
 
-                            </div>
-                            <button class="btn btn-dark btn-sm" type="submit">Submit form</button>
+                                    <input name="CicloF" type="date" class="form-control form-control-md"" id="" placeholder="Fin de curso" required>
+
+                                </div><br>
+                        <button class="btn btn-dark btn-sm btn-block" type="submit">Guardar</button>
 
                         </form>
-
+                    </div>
 
 
                 </div>

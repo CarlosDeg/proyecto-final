@@ -151,7 +151,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Nuevos Docentes</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Nuevos materias</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
