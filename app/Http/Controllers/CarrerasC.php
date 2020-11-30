@@ -17,7 +17,7 @@ class CarrerasC extends Controller
     {
 
 
-        $carreras = DB::table('carrera')->paginate(5);
+        $carreras = CarrerasM::all();
 
         return view('admin.Carreras',compact('carreras'));;
     }
@@ -48,8 +48,9 @@ class CarrerasC extends Controller
 
         $carreras->save();
         $carreras = CarrerasM::all();
-
+        $request->session()->flash('alert-success', 'Carrera Guardada con exito!');
         return redirect()->back();
+
     }
 
     /**
@@ -90,7 +91,7 @@ class CarrerasC extends Controller
         $carreras =CarrerasM::where('idCarrera',$idCarrera)->first();
         $carreras ->Carrera = $request->Carrera;
         $carreras->save();
-
+        $request->session()->flash('alert-success', 'Carrera editada con exito!');
         return redirect()->back();
 
     }
@@ -101,7 +102,7 @@ class CarrerasC extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($idCarrera)
+    public function destroy(Request $request,$idCarrera)
     {
        /* $carreras = CarrerasM::find($idCarrera);
         $carreras->delete();
@@ -111,6 +112,7 @@ class CarrerasC extends Controller
 
         if ($carreras != null) {
             $carreras->delete();
+            $request->session()->flash('alert-success', 'Carrera eliminada con exito!');
 
             return redirect()->back();
         }else

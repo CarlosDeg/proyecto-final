@@ -170,48 +170,50 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         <form action="RegistroAlumnos" method="post" >
                             @csrf
-                            <div class="modal-body">
                                 <div class="row">
-                                <div class="col-md-5">
+                                 <div class="form-group col-md-6">
                                     <input name="NombreA" type="text" class="form-control" id=""  placeholder="Nombre" required>
-                                </div>
-                                    <div class="col-md-5">
+                                 </div>
+
+                                    <div class="form-group col-md-6">
                                     <input name="ApellidoPA" type="text" class="form-control" id="" placeholder="Apellido P" >
 
-                                </div>
-                                    <div class="col-md-5">
+                                    </div>
+                                    <div class="form-group col-md-6">
                                     <input name="ApellidoMA" type="text" class="form-control" id="" placeholder="Apellido M" required>
 
                                 </div>
-                                    <div class="col-md-5">
+                                    <div class="form-group col-md-6">
                                     <input name="CorreoA" type="text" class="form-control" id="" placeholder="Correo" required>
                                 </div>
-                                    <div class="col-md-5">
+                                    <div class="form-group col-md-6">
                                     <input name="DireccionA" type="text" class="form-control" id="" placeholder="Direccion" required>
                                 </div>
-                                    <div class="col-md-5">
-                                    <input name="SexoA" type="text" class="form-control" id="" placeholder="Sexo" required>
-                                </div>
-                                    <div class="col-md-5">
+                                    <div class="form-group col-md-6">
+                                        <select name="SexoA" type="number" class="form-control" id="" required class="selectpicker">
+                                            <option > Masculino</option>
+                                            <option >Femenino</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
                                     <input name="TipoSangre" type="text" class="form-control" id="" placeholder="Grupo sanguineo" required>
                                 </div>
-                                <div class="col-md-5">
+                                    <div class="form-group col-md-6">
                                     <input name="TelefonoT" type="tel" class="form-control" id="" placeholder="Tel" required>
                                 </div>
-
+                                    <div class="form-group col-md-6">
                                     <select name="Estatus" type="number" class="form-control" id="" required class="selectpicker">
                                         <option value="1">Activo</option>
                                         <option value="2">Inactivo</option>
 
                                     </select>
-                            <div class="modal-footer">
-                                <button class="btn btn-lg btn-primary" type="submit">Guardar</button>
-                            </div>
+                                    </div>
+
+                                <button class="btn btn-md  btn-primary  btn-block" type="submit">Guardar</button>
 
                                 </div>
 
-
-                            </div>
                          </form>
                        </div>
 
@@ -261,8 +263,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class='btn-group'>
                                     <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#editar-Alumno-{{$Alumno->idMatricula}}">
                                         Editar
-                                    </button> &nbsp;  &nbsp; &nbsp;
-                                    <button href=""  type="submit" class="btn btn-danger" onclick="return confirm('Seguro que deseas eliminar este registro')"> Eliminar</button>
+                                    </button>
+                                    <button href=""  type="submit" class="btn btn-danger " onclick="return confirm('Seguro que deseas eliminar este registro')"> Eliminar</button>
                                 </div></form></td>
                     </tr>
                     </tbody>
@@ -272,7 +274,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
         </div>
-    </div>
 
 
 

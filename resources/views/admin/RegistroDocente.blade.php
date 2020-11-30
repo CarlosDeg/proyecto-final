@@ -137,8 +137,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </li>
     </ul>
 </nav>
-<!-- fin del header --><br>
-<br>
+<!-- fin del header -->
+
 
 
 <div class="content-wrapper">
@@ -161,50 +161,50 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="form-row ">
 
 
-                                <div class="col-md-6 mb-3">
+                                <div class="form-group col-md-6">
                                     <input name="NombreD" type="text" class="form-control" id=""  placeholder="Nombre" required>
 
                                 </div>
-                                <div class="col-md-6 mb-3">
+                                <div class="form-group col-md-6">
 
                                     <input name="ApellidoPD" type="text" class="form-control" id="" placeholder="Apellido P" >
 
                                 </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-md-6 mb-3">
+
+
+                            <div class="form-group col-md-6">
 
                                     <input name="ApellidoM" type="text" class="form-control" id="" placeholder="Apellido M" required>
 
                                 </div>
 
-                                <div class="col-md-6 mb-2">
+                                <div class="form-group col-md-6">
 
                                     <input name="CorreoD" type="text" class="form-control" id="" placeholder="Correo" required>
 
                                 </div>
-                            </div>
 
-                            <div class="col-md-6 mb-2">
+
+                                <div class="form-group col-md-6">
 
                                 <input name="Telefono" type="number" class="form-control" id="" placeholder="Telefono" required>
 
                             </div>
 
-                            <div class="col-md-6 mb-2">
+                                <div class="form-group col-md-6">
 
                                 <input name="Cedula" type="text" class="form-control" id="" placeholder="cedula" required>
 
                             </div>
-
+                                <div class="form-group col-md-6">
                             <select name="Estatus" type="number" class="form-control" id="" required class="selectpicker">
                                 <option value="1">Activo</option>
                                 <option value="2">Inactivo</option>
 
                             </select>
-
-                            <button class="btn btn-dark btn-sm" type="submit">Guardar</button>
-
+                                </div>
+                            <button class="btn btn-primary btn-sm btn-block" type="submit">Guardar</button>
+                            </div>
                         </form>
 
 
@@ -214,7 +214,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
             </div>
 
+    <div class="row justify-content-center ">
 
+            <div class="table-responsive">
             <!--TABLA -->
             <table class="table table-striped table-dark table-hover">
                 <thead>
@@ -248,10 +250,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 @method('DELETE')
                                 @csrf
                                 <div class='btn-group'>
-                                    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#editar-docente-{{$docent->idCedula}}">
-                                        Editar
+                                    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#editar-docente-{{$docent->idCedula}}">Editar
                                     </button> &nbsp;  &nbsp; &nbsp;
-                                    <button href=""  type="submit" class="btn btn-danger" onclick="return confirm('Seguro que deseas eliminar este registro')"> Eliminar</button>
+                                    <button href=""  type="submit" class="btn btn-danger" onclick="return confirm('Seguro que deseas eliminar este registro')">Eliminar</button>
                                 </div></form></td>
                     </tr>
                     </tbody>
@@ -259,13 +260,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 @endforeach
             </table>
 
-
+            </div>
         </div>
-    </div>
-
 
 </div>
-<script>
+
 
 </body>
 </html>

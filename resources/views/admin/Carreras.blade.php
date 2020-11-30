@@ -45,7 +45,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- Modal -->
 
 <div class="content-wrapper">
-    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#modal-create-Carrer" >
+    <div class="flash-message">
+            @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+            @if(Session::has('alert-' . $msg))
+
+                <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
+            @endif
+        @endforeach
+    </div> <!-- end .flash-message -->
+    <button type="button" class="btn btn-primary btn-lg " data-toggle="modal" data-target="#modal-create-Carrer" >
         Crear
     </button>
     <div    class="modal fade" id="modal-create-Carrer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -79,17 +87,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
 
             </div>
-        </div>
+        </div><br>
 
-    <div class="container">
-        <div class="col-md-7 offset-3 mt-4">
 
-            @include('admin.flash-message')
-
-            @yield('content')
-
-        </div>
-    </div>
     <!--TABLA -->
     <table id="laravel_crud" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
         <thead>

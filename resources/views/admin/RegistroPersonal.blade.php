@@ -5,7 +5,7 @@
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-<html lang="en">
+<div lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -228,7 +228,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         </div>
             <!--TABLA -->
-            <table class="table table-striped table-dark table-hover">
+        <div class="row justify-content-center h-100">
+            <div class="row-cols-xl-6 text-center">
+
+            <table class="table table-striped table-dark table-hover ">
                 <thead>
                 <tr>
                     <th scope="col">Id</th>
@@ -274,7 +277,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         </div>
     </div>
-
+    </div>
 
 
 </body>
