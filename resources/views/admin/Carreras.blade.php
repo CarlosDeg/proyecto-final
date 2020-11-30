@@ -1,21 +1,33 @@
-<! DOCTYPE html>
-<html>
-<html>
-    <meta charset = "utf-8" />
-    <meta http-equiv = "X-UA-Compatible" content = "IE = edge">
-    <title>Carreras</title>
-    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
-    <link rel = "stylesheet" type = "text / css" media = "screen" href = "main.css" />
-    <script src = "main.js"> </script>
-    </head>
-<body>
+
+<!DOCTYPE html>
+
+<!--loco el puga
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/ccbca44be9.js" crossorigin="anonymous"></script>
+    <title>Registro | Carreras </title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="adminlte/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini">
 
 
 <!-- header   -->
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<nav class="main-header navbar navbar-expand navbar-cyan navbar-light">
 
-    @extends('admin.menu')
-    @extends('admin.principal')
+
+@extends('admin.principal')
         <!-- Left navbar links -->
         <ul class="navbar-nav">
             <li class="nav-item">

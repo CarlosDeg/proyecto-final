@@ -15,10 +15,11 @@ class CreateReinscripcionTable extends Migration
     {
         Schema::create('Reinscripcion', function (Blueprint $table) {
             $table->increments('idReinscripcion');
+            $table->string('estatus');
             $table->unsignedInteger('idPagos');
             $table->unsignedInteger('idAdminitrativo');
-            $table->foreign('idPagos')->references('idPagos')->on('Pago');
-            $table->foreign('idAdminitrativo')->references('idAdminitrativo')->on('administrativos');
+            $table->foreign('idPagos')->references('idPagos')->on('Pago')->onDelete('cascade')->onDelete('cascade');
+            $table->foreign('idAdminitrativo')->references('idAdminitrativo')->on('administrativos')->onDelete('cascade');
 
             $table->timestamps();
         });

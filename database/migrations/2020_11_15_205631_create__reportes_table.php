@@ -18,7 +18,7 @@ class CreateReportesTable extends Migration
             $table->string('NombreR');
             $table->string('Castigo');
             $table->unsignedInteger('idMatricula');
-            $table->foreign('idMatricula')->references('idMatricula')->on('Alumno');
+            $table->foreign('idMatricula')->references('idMatricula')->on('Alumno')->onDelete('cascade');
 
             $table->timestamps();
         });

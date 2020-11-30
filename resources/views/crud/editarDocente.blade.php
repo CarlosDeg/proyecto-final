@@ -52,11 +52,12 @@
                             <input name="Cedula" type="text" class="form-control" id="" placeholder="cedula" value="{{$docent->Cedula}}" required>
 
                         </div>
-                        <div class="col-md-6 mb-2">
 
-                            <input name="Estatus" type="number" class="form-control" id="" placeholder="Estatus" value="{{$docent->Estatus}}" required>
+                        <select name="Estatus" type="number" class="form-control" id="" value="{{$docent->Estatus}}"  required class="selectpicker">
+                            <option value="1">Activo</option>
+                            <option value="2">Inactivo</option>
 
-                        </div>
+                        </select>
                         <button class="btn btn-dark btn-sm" type="submit">Guardar</button>
 
                     </div>

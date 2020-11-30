@@ -20,7 +20,7 @@ class CreatePagoTable extends Migration
             $table->string('Precio');
             $table->string('Referencia');
             $table->unsignedInteger('idMatricula');
-            $table->foreign('idMatricula')->references('idMatricula')->on('Alumno');
+            $table->foreign('idMatricula')->references('idMatricula')->on('Alumno')->onDelete('cascade');
             $table->timestamps();
         });
     }

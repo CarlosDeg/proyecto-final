@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
-<!--
+
+<!--loco el puga
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
@@ -10,7 +11,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/ccbca44be9.js" crossorigin="anonymous"></script>
-    <title>Graduado</title>
+    <title>Registro | Graduado </title>
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -23,12 +24,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 <!-- header   -->
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<nav class="main-header navbar navbar-expand navbar-cyan navbar-light">
 
 
 @extends('admin.principal')
-
-
 <!-- Left navbar links -->
     <ul class="navbar-nav">
         <li class="nav-item">

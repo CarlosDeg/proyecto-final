@@ -17,8 +17,8 @@ class CreateProfesorMateriaTable extends Migration
             $table->increments('idProfesorMateria');
             $table->unsignedInteger('idCedula');
             $table->unsignedInteger('idMateria');
-            $table->foreign('idCedula')->references('idCedula')->on('Docente');
-            $table->foreign('idMateria')->references('idMateria')->on('Materia');
+            $table->foreign('idCedula')->references('idCedula')->on('Docente')->onDelete('cascade');
+            $table->foreign('idMateria')->references('idMateria')->on('Materia')->onDelete('cascade');
 
 
 

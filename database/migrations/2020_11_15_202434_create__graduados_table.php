@@ -18,8 +18,8 @@ class CreateGraduadosTable extends Migration
             $table->String('promedioGeneral');
             $table->unsignedInteger('idGrupo');
             $table->unsignedInteger('idMatricula');
-            $table->foreign('idGrupo')->references('idGrupo')->on('Grupo');
-            $table->foreign('idMatricula')->references('idMatricula')->on('Alumno');
+            $table->foreign('idGrupo')->references('idGrupo')->on('Grupo')->onDelete('cascade');
+            $table->foreign('idMatricula')->references('idMatricula')->on('Alumno')->onDelete('cascade');
 
 
             $table->timestamps();

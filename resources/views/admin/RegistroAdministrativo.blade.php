@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<!--loco el puga 
+<!--loco el puga
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
@@ -161,23 +161,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         @csrf
                         <div class="modal-body ">
 
-                            <input type="hidden" 
+                            <input type="hidden"
                              name="idAdminitrativo" id="idAdminitrativo">
 
 
-                            
+
                   <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fas fa-address-book"></i></span>
                   </div>
-                            
+
                                 <input name="NombreAd" type="text" class="form-control" id=""  placeholder="Nombre" required>
 
                             </div>
                         </div>
-                   
-                    
+
+
                             <div class="form-group">
                                 <input name="ApellidoPAd" type="text" class="form-control" id="" placeholder="Apellido P" >
 
@@ -202,7 +202,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         <div class="form-group">
 
-                            <input name="CorreoAd" type="text" class="form-control" id="" placeholder="Correo" required>
+                            <input name="CorreoAd" type="email" class="form-control" id="" placeholder="Correo" required>
 
                         </div>
                         </div>

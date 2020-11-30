@@ -39,9 +39,12 @@
                         <div class="col-md-5">
                             <input name="TelefonoT" type="tel" class="form-control" id="" placeholder="Tel" value="{{$Alumno->TelefonoT}}"  required>
                         </div>
-                        <div class="col-md-5">
-                            <input name="Estatus" type="text" class="form-control" id="" placeholder="Estatus" value="{{$Alumno->Estatus}}" required>
-                        </div>
+
+                        <select name="Estatus" type="number" class="form-control" id="" value="{{$Alumno->Estatus}}"  required class="selectpicker">
+                            <option value="1">Activo</option>
+                            <option value="2">Inactivo</option>
+
+                        </select>
                         <div class="modal-footer">
                             <button class="btn btn-lg btn-primary" type="submit">Guardar</button>
                         </div>

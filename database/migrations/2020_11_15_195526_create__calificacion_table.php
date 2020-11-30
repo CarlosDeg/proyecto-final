@@ -18,8 +18,8 @@ class CreateCalificacionTable extends Migration
             $table->String('Calificacion');
             $table->unsignedInteger('idMatricula');
             $table->unsignedInteger('idMateria');
-            $table->foreign('idMatricula')->references('idMatricula')->on('Alumno');
-            $table->foreign('idMateria')->references('idMateria')->on('Materia');
+            $table->foreign('idMatricula')->references('idMatricula')->on('Alumno')->onDelete('cascade');
+            $table->foreign('idMateria')->references('idMateria')->on('Materia')->onDelete('cascade');
             $table->timestamps();
         });
     }

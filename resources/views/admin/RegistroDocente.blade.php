@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
-<!--
+
+<!--loco el puga
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
@@ -10,7 +11,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/ccbca44be9.js" crossorigin="anonymous"></script>
-    <title>Formulario  | Docente</title>
+    <title>Registro | Docente </title>
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -23,11 +24,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 <!-- header   -->
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<nav class="main-header navbar navbar-expand navbar-cyan navbar-light">
 
 
 @extends('admin.principal')
-
 
 <!-- Left navbar links -->
     <ul class="navbar-nav">
@@ -196,11 +196,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <input name="Cedula" type="text" class="form-control" id="" placeholder="cedula" required>
 
                             </div>
-                            <div class="col-md-6 mb-2">
 
-                                <input name="Estatus" type="number" class="form-control" id="" placeholder="Estatus" required>
+                            <select name="Estatus" type="number" class="form-control" id="" required class="selectpicker">
+                                <option value="1">Activo</option>
+                                <option value="2">Inactivo</option>
 
-                            </div>
+                            </select>
+
                             <button class="btn btn-dark btn-sm" type="submit">Guardar</button>
 
                         </form>

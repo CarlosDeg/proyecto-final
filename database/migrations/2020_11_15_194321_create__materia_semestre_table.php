@@ -18,8 +18,8 @@ class CreateMateriaSemestreTable extends Migration
 
             $table->unsignedInteger('idSemestre');
             $table->unsignedInteger('idMateria');
-            $table->foreign('idSemestre')->references('idSemestre')->on('Semestre');
-            $table->foreign('idMateria')->references('idMateria')->on('Materia');
+            $table->foreign('idSemestre')->references('idSemestre')->on('Semestre')->onDelete('cascade');
+            $table->foreign('idMateria')->references('idMateria')->on('Materia')->onDelete('cascade');;
             $table->timestamps();
         });
     }

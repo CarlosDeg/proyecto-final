@@ -1,16 +1,17 @@
 
 <!DOCTYPE html>
-<!--
+
+<!--loco el puga
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-<div lang="en">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/ccbca44be9.js" crossorigin="anonymous"></script>
-    <title>Admin  | Personal</title>
+    <title>Registro | Personal </title>
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -19,11 +20,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<div class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini">
 
 
 <!-- header   -->
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<nav class="main-header navbar navbar-expand navbar-cyan navbar-light">
 
 
 @extends('admin.principal')

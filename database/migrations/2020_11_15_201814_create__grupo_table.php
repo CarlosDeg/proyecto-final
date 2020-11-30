@@ -20,8 +20,8 @@ class CreateGrupoTable extends Migration
             $table->String('FechaF');
             $table->unsignedInteger('idCarrera');
             $table->unsignedInteger('idSemestre');
-            $table->foreign('idCarrera')->references('idCarrera')->on('Carrera');
-            $table->foreign('idSemestre')->references('idSemestre')->on('Semestre');
+            $table->foreign('idCarrera')->references('idCarrera')->on('Carrera')->onDelete('cascade');
+            $table->foreign('idSemestre')->references('idSemestre')->on('Semestre')->onDelete('cascade');
 
             $table->timestamps();
 
