@@ -73,6 +73,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="modal-footer">
                             <button class="btn btn-primary btn-md" type="submit">Guardar</button>
                         </div>
+
                     </form>
 
                 </div>
@@ -80,7 +81,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
         </div>
 
+    <div class="container">
+        <div class="col-md-7 offset-3 mt-4">
 
+            @include('admin.flash-message')
+
+            @yield('content')
+
+        </div>
+    </div>
     <!--TABLA -->
     <table id="laravel_crud" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
         <thead>
