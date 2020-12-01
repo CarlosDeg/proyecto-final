@@ -105,7 +105,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                
                             </div><br>
                             <div class="text-center button-center">
-                            <button class="btn btn-lg navbar-teal" type="submit">Submit form</button>
+                            <button class="btn btn-lg navbar-teal" type="submit">Guardar</button>
                         </div>
 
                         </form>

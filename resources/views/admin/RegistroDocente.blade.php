@@ -51,22 +51,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-create-docente" >
         Nuevo
     </button><br><br>
-    <div    class="modal fade" id="modal-create-docente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modal-create-docente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header navbar-cyan">
                     <h5 class="modal-title" id="exampleModalLabel">Nuevos Docentes</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                    <div class="card-body">
+                    <div class="modal-body">
 
                         <form action="RegistroDocente" method="post" >
                             @csrf
-                            <div class="form-row ">
-
-
+                            <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <input name="NombreD" type="text" class="form-control" id=""  placeholder="Nombre" required>
 
@@ -76,8 +74,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <input name="ApellidoPD" type="text" class="form-control" id="" placeholder="Apellido P" >
 
                                 </div>
-
-
+                            </div>
+                            <div class="form-row">
                             <div class="form-group col-md-6">
 
                                     <input name="ApellidoM" type="text" class="form-control" id="" placeholder="Apellido M" required>
@@ -89,8 +87,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <input name="CorreoD" type="text" class="form-control" id="" placeholder="Correo" required>
 
                                 </div>
-
-
+                            </div>
+                            <div class="form-row">
                                 <div class="form-group col-md-6">
 
                                 <input name="Telefono" type="number" class="form-control" id="" placeholder="Telefono" required>
@@ -102,19 +100,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <input name="Cedula" type="text" class="form-control" id="" placeholder="cedula" required>
 
                             </div>
-                                <div class="form-group col-md-6">
+                        </div>
+                        <div class="form-group">
+                                
                             <select name="Estatus" type="number" class="form-control" id="" required class="selectpicker">
                                 <option value="1">Activo</option>
                                 <option value="2">Inactivo</option>
 
                             </select>
-                                </div>
-                            <button class="btn btn-primary btn-sm btn-block" type="submit">Guardar</button>
+                                </div><br>
+                                <div class="text-center button-center">
+                            <button class="btn btn-lg navbar-teal" type="submit">Guardar</button>
                             </div>
                         </form>
 
 
-</div>
+                      </div>
 
                     </div>
                 </div>

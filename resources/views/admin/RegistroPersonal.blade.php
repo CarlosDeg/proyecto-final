@@ -56,13 +56,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div    class="modal fade" id="modal-create-personal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header navbar-cyan">
                         <h5 class="modal-title" id="exampleModalLabel">Nuevo Personal</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="card-body">
+                    <div class="modal-body">
 
                         <form action="RegistroPersonal" method="post" >
                             @csrf
@@ -92,6 +92,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 </div>
                             </div>
+                            <div class="form-row">
 
                             <div class="col-md-6 mb-2">
 
@@ -104,18 +105,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <input name="EdadP" type="number" class="form-control" id="" placeholder="EdadP" required>
 
                             </div>
-                            <div class="col-md-6 mb-2">
+                        </div>
+                            <div class="form-group">
 
                                 <input name="TelefonoP" type="number" class="form-control" id="" placeholder="TelefonoP" required>
 
                             </div>
-                            <button class="btn btn-dark btn-sm" type="submit">Submit form</button>
+                            <div class="text-center button-center">
+                            <button class="btn btn-lg navbar-teal" type="submit">Guardar</button>
+                        </div>
 
                         </form>
-
-
-
-
                     </div>
                 </div>
             </div>

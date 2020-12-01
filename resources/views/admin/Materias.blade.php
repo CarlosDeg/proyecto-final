@@ -78,7 +78,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                             </div>
 
-                            <button class="btn btn-dark btn-sm" type="submit">Submit form</button>
+                            <button class="btn btn-dark btn-sm" type="submit">Guardar</button>
                         </form>
 
                         </form>

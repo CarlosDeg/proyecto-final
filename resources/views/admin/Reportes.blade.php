@@ -88,10 +88,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </select>
 
                                 </div>
-                                <div class="text-center button-center">
-
-                           
+                                <div class="text-center button-center">                           
                                 <button class="btn btn-lg navbar-teal" type="submit">Guardar</button>
+                            </div>
                             </div>
                         </form>
 
