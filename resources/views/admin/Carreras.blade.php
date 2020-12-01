@@ -46,7 +46,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- fin del header --><br>
 <br>
 <!-- Modal -->
-
 <div class="content-wrapper">
     <div class="flash-message">
             @foreach (['danger', 'warning', 'success', 'info'] as $msg)
