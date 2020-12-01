@@ -84,7 +84,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <input name="CicloF" type="date" class="form-control form-control-md" id="" placeholder="Fin de curso" required>
 
                                 </div><br>
+                                 <div class="text-center button-center">
                         <button class="btn btn-dark btn-sm btn-block" type="submit">Guardar</button>
+                    </div>
 
                         </form>
                     </div>

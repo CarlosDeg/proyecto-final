@@ -54,7 +54,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div    class="modal fade" id="modal-create-grupo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header navbar-cyan">
                         <h5 class="modal-title" id="exampleModalLabel">Nuevos grupos</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -82,20 +82,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
 
 
-                            </div>
-                            <div class="form-group col-md-6 mb-3">
-                                <div class="form-check ">
+                            
+                            <div class="form-group col-md-6">
+                            
                                     <select name="idCarrera" class="custom-select" id="idCarrera" required>
                                         <option selected disabled value="">Seleccionar Carrera</option>
                                         @foreach ( $carreras as $carrera )
                                             <option value="{{$carrera['idCarrera']}}">{{ $carrera['Carrera'] }}</option>
                                         @endforeach
                                     </select>
-
-                                </div>
                             </div>
-                            <div class="form-group col-md-6 mb-3">
-                                <div class="form-check ">
+                            </div>
+                            <div class="form-row">
+                                
                                     <select name="idSemestre" class="custom-select" id="idSemestre" required>
                                         <option selected disabled value="">Seleccionar Semestre</option>
                                         @foreach ( $semestres as $semestre )
@@ -103,13 +102,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         @endforeach
                                     </select>
 
-                                </div>
-                            </div>
-                            <button class="btn btn-dark btn-sm" type="submit">Submit form</button>
+                               
+                            </div><br>
+                            <div class="text-center button-center">
+                            <button class="btn btn-lg navbar-teal" type="submit">Submit form</button>
+                        </div>
 
                         </form>
-
-
                     </div>
 
                 </div>

@@ -56,7 +56,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div    class="modal fade" id="modal-create-graduado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header navbar-cyan">
                         <h5 class="modal-title" id="exampleModalLabel">Graduados</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -67,13 +67,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <form action="Graduado" method="post" >
                             @csrf
                             <div class="form-row ">
-                                <div class="col-md-6 mb-3">
+                                
                                     <input name="promedioGeneral" type="text" class="form-control" id=""  placeholder="Promedio" required>
 
-                                </div>
-                            </div>
-                            <div class="form-group col-md-6 mb-3">
-                                <div class="form-check ">
+                                
+                            </div><br>
+                           <div class="form-row">
+                            <div class="form-group col-md-6 ">
+                                
                                     <select name="idGrupo" class="custom-select" id="idCarrera" required>
                                         <option selected disabled value="">Seleccionar Grupo</option>
                                         @foreach ( $grupos as $grupo )
@@ -81,10 +82,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         @endforeach
                                     </select>
 
-                                </div>
-                            </div>
-                            <div class="form-group col-md-6 mb-3">
-                                <div class="form-check ">
+                               
+                           </div>
+
+                            <div class="form-group col-md-6 ">
+                                
                                     <select name="idMatricula" class="custom-select" id="idCarrera" required>
                                         <option selected disabled value="">Seleccionar Alumno</option>
                                         @foreach ( $alumnos as $alumno )
@@ -92,13 +94,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         @endforeach
                                     </select>
 
-                                </div>
+                               
                             </div>
+                             </div><br>
 
+                              <div class="text-center button-center">
 
-
-
-                            <button class="btn btn-dark btn-sm" type="submit">Submit form</button>
+                            <button class="btn btn-lg navbar-teal" type="submit"> Enviar</button>
+                        </div>
 
                         </form>
 

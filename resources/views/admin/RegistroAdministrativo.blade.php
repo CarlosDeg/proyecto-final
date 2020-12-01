@@ -52,7 +52,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-create-administrativos" >
             Nuevo
         </button><br><br>
-        <div    class="modal fade" id="modal-create-administrativos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modal-create-administrativos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header navbar-cyan">

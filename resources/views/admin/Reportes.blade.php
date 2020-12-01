@@ -52,7 +52,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header navbar-cyan">
                         <h5 class="modal-title" id="exampleModalLabel">Reportes</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -88,9 +88,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </select>
 
                                 </div>
+                                <div class="text-center button-center">
 
-                            <div class="modal-footer">
-                                <button class="btn btn-primary btn-md" type="submit">Guardar</button>
+                           
+                                <button class="btn btn-lg navbar-teal" type="submit">Guardar</button>
                             </div>
                         </form>
 

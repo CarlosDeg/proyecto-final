@@ -54,17 +54,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div  class="modal fade" id="modal-create-Alumnos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header navbar-cyan">
                         <h5 class="modal-title" id="exampleModalLabel">Registro de Nuevos Alumnos</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="card-body">
-
+                     <div class="modal-body">
                         <form action="RegistroAlumnos" method="post" >
                             @csrf
-                                <div class="row">
+                                <div class="form-row">
                                  <div class="form-group col-md-6">
                                     <input name="NombreA" type="text" class="form-control" id=""  placeholder="Nombre" required>
                                  </div>
@@ -73,6 +72,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <input name="ApellidoPA" type="text" class="form-control" id="" placeholder="Apellido P" >
 
                                     </div>
+                                </div>
+                                <div class="form-row">
                                     <div class="form-group col-md-6">
                                     <input name="ApellidoMA" type="text" class="form-control" id="" placeholder="Apellido M" required>
 
@@ -80,6 +81,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <div class="form-group col-md-6">
                                     <input name="CorreoA" type="text" class="form-control" id="" placeholder="Correo" required>
                                 </div>
+                            </div>
+                            <div class="form-row">
                                     <div class="form-group col-md-6">
                                     <input name="DireccionA" type="text" class="form-control" id="" placeholder="Direccion" required>
                                 </div>
@@ -89,24 +92,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <option >Femenino</option>
 
                                         </select>
-                                    </div>
+                                    </div></div>
+                                    <div class="form-row">
                                     <div class="form-group col-md-6">
                                     <input name="TipoSangre" type="text" class="form-control" id="" placeholder="Grupo sanguineo" required>
                                 </div>
                                     <div class="form-group col-md-6">
                                     <input name="TelefonoT" type="tel" class="form-control" id="" placeholder="Tel" required>
-                                </div>
-                                    <div class="form-group col-md-6">
+                                </div></div>
+                                     <div class="form-group">
                                     <select name="Estatus" type="number" class="form-control" id="" required class="selectpicker">
                                         <option value="1">Activo</option>
                                         <option value="2">Inactivo</option>
 
                                     </select>
-                                    </div>
-
-                                <button class="btn btn-md  btn-primary  btn-block" type="submit">Guardar</button>
-
-                                </div>
+                                    </div><br>
+                                    <div class="text-center button-center">
+                                <button class="btn btn-lg navbar-teal" type="submit">Guardar</button>
+                            </div>
 
                          </form>
                        </div>
